@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Waqas Naveed's Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s public"
+  },
+  "dependencies": {
+    "serve": "^13.0.2"
+  },
+  "author": "Waqas Naveed",
+  "license": "ISC"
+}
