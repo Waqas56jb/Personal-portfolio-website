@@ -156,7 +156,7 @@ h6 {
     position: relative;
     width: 45%;
     margin-bottom: 40px;
-    opacity: 0;
+    /* Removed opacity: 0 to ensure visibility by default */
 }
 
 .timeline-item.left {
