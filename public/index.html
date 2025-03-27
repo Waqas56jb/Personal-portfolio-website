@@ -15,8 +15,397 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="./public/styles.css" />
+    <style>
+        :root {
+            --primary-color: #000000; /* Black */
+            --secondary-color: #00ffff; /* Cyan */
+            --accent-color: #ff00ff; /* Magenta */
+            --background-color: #000000; /* Black */
+            --text-color: #ffffff; /* White */
+            --card-bg: #2a2a2a; /* Dark Gray */
+        }
+
+        /* Base Styles */
+        body {
+            background: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Particles Background */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #000000, #0f3460);
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--primary-color);
+            padding: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: var(--text-color) !important;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-color);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .intro-image img {
+            max-width: 300px;
+            border-radius: 15px;
+            border: 3px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .intro-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--secondary-color);
+        }
+
+        .intro-section h1 {
+            font-size: 3.5rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .intro-text {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .btn-custom {
+            background: var(--accent-color);
+            color: var(--text-color);
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* About Section */
+        .about-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--secondary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            margin-bottom: 40px;
+            opacity: 0;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 55%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: 20px;
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .timeline-item.left .timeline-icon {
+            right: -60px;
+        }
+
+        .timeline-item.right .timeline-icon {
+            left: -60px;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-item.left .timeline-content::before {
+            right: -10px;
+        }
+
+        .timeline-item.right .timeline-content::before {
+            left: -10px;
+        }
+
+        .timeline-content h4 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-content p {
+            margin-bottom: 10px;
+        }
+
+        .timeline-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .timeline-content li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                left: 0;
+                text-align: left;
+                margin-left: 40px;
+            }
+            .timeline-item.right {
+                left: 0;
+            }
+            .timeline-icon {
+                left: -40px;
+            }
+            .timeline-item.left .timeline-icon, .timeline-item.right .timeline-icon {
+                left: -40px;
+            }
+            .timeline-content::before {
+                left: -30px;
+            }
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            color: var(--accent-color);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            color: var(--secondary-color);
+        }
+
+        .project-tech {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-details {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-details p {
+            margin: 10px 0;
+        }
+
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        .contact-details a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        .connect-links a {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+        }
+
+        .connect-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.2);
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #back-to-top:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .intro-section h1 {
+                font-size: 2.5rem;
+            }
+            .intro-text {
+                font-size: 1.2rem;
+            }
+            .intro-image img {
+                max-width: 200px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -32,16 +421,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="#about">About</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn"
-                            href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn"
-                            href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -52,15 +436,14 @@
         <div class="container">
             <div class="row align-items-center text-center text-md-left">
                 <div class="col-md-6 intro-image">
-                    <img src="/public/profile2.png" alt="Waqas Naveed" class="animate__animated animate__zoomIn" />
+                    <img src="./profile2.png" alt="Waqas Naveed" class="animate__animated animate__zoomIn" />
                 </div>
                 <div class="col-md-6">
                     <h1 class="animate__animated animate__fadeInUp">Waqas Naveed</h1>
                     <p class="intro-text animate__animated animate__fadeInUp animate__delay-1s">
                         Data Science Enthusiast | AI Engineer | Machine Learning Expert
                     </p>
-                    <a href="#projects" class="btn-custom animate__animated animate__fadeInUp animate__delay-2s">Explore
-                        My Work</a>
+                    <a href="#projects" class="btn-custom animate__animated animate__fadeInUp animate__delay-2s">Explore My Work</a>
                 </div>
             </div>
         </div>
@@ -81,23 +464,23 @@
                 <div class="timeline">
                     <div class="timeline-item left">
                         <div class="timeline-content">
-                            <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="timeline-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
                             <h4>Education</h4>
-                            <p>BS Computer Science, Fast National University of Computer and Emerging Sciences, 2021 -
-                                2025</p>
+                            <p>BS Computer Science, Fast National University of Computer and Emerging Sciences, 2021 - 2025</p>
                         </div>
                     </div>
                     <div class="timeline-item right">
                         <div class="timeline-content">
-                            <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="timeline-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
                             <h4>Work Experience</h4>
-                            <p>Artificial Intelligence Engineer, Freelancing and Online Paid Projects, December 2023 –
-                                Present</p>
+                            <p>Artificial Intelligence Engineer, Freelancing and Online Paid Projects, December 2023 – Present</p>
                             <ul>
-                                <li>Trained and fine-tuned AI and ML models to achieve high accuracy and optimal
-                                    performance.</li>
-                                <li>Built Retrieval-Augmented Generation (RAG) systems using LangChain for enhanced
-                                    query responses.</li>
+                                <li>Trained and fine-tuned AI and ML models to achieve high accuracy and optimal performance.</li>
+                                <li>Built Retrieval-Augmented Generation (RAG) systems using LangChain for enhanced query responses.</li>
                                 <li>Deployed scalable AI solutions on cloud platforms (AWS, GCP).</li>
                                 <li>Collaborated on technical problem-solving with a team of AI experts.</li>
                                 <li>Communicated complex AI concepts effectively to clients.</li>
@@ -106,7 +489,9 @@
                     </div>
                     <div class="timeline-item left">
                         <div class="timeline-content">
-                            <div class="timeline-icon"><i class="fas fa-hands-helping"></i></div>
+                            <div class="timeline-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
                             <h4>Volunteer</h4>
                             <p>University Top Programmer Team, Fast National University, Sep 2021 - Present</p>
                             <ul>
@@ -117,7 +502,9 @@
                     </div>
                     <div class="timeline-item right">
                         <div class="timeline-content">
-                            <div class="timeline-icon"><i class="fas fa-certificate"></i></div>
+                            <div class="timeline-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
                             <h4>Certifications</h4>
                             <ul>
                                 <li>Zidio Development Data Science, Aug 2024</li>
@@ -164,83 +551,90 @@
         <div class="container">
             <h2 class="animate__animated animate__fadeInDown">Projects</h2>
             <div class="projects-grid">
+                <!-- Project 1 -->
                 <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./public/assets/healthgenix.png" alt="HealthGenics" class="project-image">
+                    <img src="./assets/healthgenix.png" alt="HealthGenics" class="project-image">
                     <h3>HealthGenics – Final Year Project</h3>
                     <p>Developed an AI-powered fitness and rehabilitation app focusing on body position detection,
                         workout plans, and injury recovery. Utilized MediaPipe for body position tracking, React Native
-                        for front-end, and Flask for backend model deployment.</p>
+                        for front-end, and Flask for backend model deployment. Integrated for user progress
+                        visualization and designed a premium category with online transaction features.</p>
                     <p class="project-tech"><strong>Tech:</strong> Python, MediaPipe, React Native, Flask</p>
-                    <a href="https://github.com/Waqas56jb/HealthGenix-Online-Gym-Training-App" class="btn-custom">View
-                        on GitHub</a>
+                    <a href="https://github.com/Waqas56jb/HealthGenix-Online-Gym-Training-App" class="btn-custom">View on GitHub</a>
                 </div>
+                <!-- Project 2 -->
                 <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./public/assets/webscrapper.png" alt="Automated Web Scraper" class="project-image">
+                    <img src="./assets/webscrapper.png" alt="Automated Web Scraper" class="project-image">
                     <h3>Automated Web Scraper & Email Outreach System</h3>
                     <p>Developed a dynamic web scraping tool to extract emails, phone numbers, and contact details from
-                        websites. Integrated an automated email-sending system using SMTP.</p>
+                        various websites. Utilized Python, Scrapy, Selenium, and BeautifulSoup to handle complex,
+                        JavaScript-rendered sites. Integrated an automated email-sending system using SMTP and
+                        organizational email services for targeted outreach.</p>
                     <p class="project-tech"><strong>Tech:</strong> Python, Scrapy, Selenium, BeautifulSoup, SMTP</p>
-                    <a href="https://github.com/Waqas56jb/Webscrapping-End-to-End-Project-Automation"
-                        class="btn-custom">View on GitHub</a>
+                    <a href="https://github.com/Waqas56jb/Webscrapping-End-to-End-Project-Automation" class="btn-custom">View on GitHub</a>
                 </div>
+                <!-- Project 3 -->
                 <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./public/assets/vehicle.PNG" alt="Emergency Vehicle Detection" class="project-image">
+                    <img src="./assets/vehicle.PNG" alt="Emergency Vehicle Detection" class="project-image">
                     <h3>Emergency Vehicle Detection System</h3>
-                    <p>Developed a deep learning model for detecting emergency vehicles using image data with TensorFlow
-                        and Keras.</p>
+                    <p>Developed a deep learning model for detecting and classifying emergency vehicles using image
+                        data. Utilized TensorFlow and Keras to train a CNN-based model for real-time prediction.
+                        Improved accuracy and responsiveness to aid in automated traffic management and emergency
+                        response.</p>
                     <p class="project-tech"><strong>Tech:</strong> Python, TensorFlow, Keras</p>
-                    <a href="https://github.com/Waqas56jb/Emergencey-Vehicle-Recognization" class="btn-custom">View on
-                        GitHub</a>
+                    <a href="https://github.com/Waqas56jb/Emergencey-Vehicle-Recognization" class="btn-custom">View on GitHub</a>
                 </div>
+                <!-- Project 4 -->
                 <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./public/assets/english-to-arabic.PNG" alt="Arabic-to-English Translator"
-                        class="project-image">
+                    <img src="./assets/english-to-arabic.PNG" alt="Arabic-to-English Translator" class="project-image">
                     <h3>Transformer-based Seq2Seq Model: Arabic-to-English Translator App</h3>
-                    <p>A neural machine translation model using transformers for Arabic-to-English conversion.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Python, TensorFlow, PyTorch, Hugging Face
-                        Transformers</p>
-                    <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App"
-                        class="btn-custom">View on GitHub</a>
+                    <p>A neural machine translation (NMT) model using transformers for Arabic-to-English conversion. It
+                        leverages self-attention mechanisms for improved translation accuracy.</p>
+                    <p class="project-tech"><strong>Tech:</strong> Python, TensorFlow, PyTorch, Hugging Face Transformers</p>
+                    <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App" class="btn-custom">View on GitHub</a>
                 </div>
+                <!-- Project 5 -->
                 <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./public/assets/top translator.PNG" alt="GenAI Translation" class="project-image">
+                    <img src="./assets/top translator.PNG" alt="GenAI Translation" class="project-image">
                     <h3>GenAI Arabic-to-English Translation</h3>
-                    <p>A generative AI-based translation model enhancing quality using deep learning techniques.</p>
+                    <p>A generative AI-based translation model that enhances translation quality using deep learning
+                        techniques trained on Arabic-English corpora.</p>
                     <p class="project-tech"><strong>Tech:</strong> Python, OpenAI GPT, Llama, TensorFlow, PyTorch</p>
-                    <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App"
-                        class="btn-custom">View on GitHub</a>
+                    <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App" class="btn-custom">View on GitHub</a>
                 </div>
+                <!-- Project 6 -->
                 <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./public/assets/algorithmic trading.PNG" alt="Algorithmic Trading" class="project-image">
+                    <img src="./assets/algorithmic trading.PNG" alt="Algorithmic Trading" class="project-image">
                     <h3>Algorithmic Trading Using ML, DL, and NLP</h3>
-                    <p>A stock market prediction system using ML, DL, and NLP to analyze financial data and news
-                        sentiment.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Python, Pandas, Scikit-learn, TensorFlow, spaCy, NLTK
-                    </p>
-                    <a href="https://github.com/Waqas56jb/Algorithmic-Trading-Using-Ml-DL-NLP" class="btn-custom">View
-                        on GitHub</a>
+                    <p>A stock market prediction system using machine learning, deep learning, and NLP to analyze
+                        financial data, news sentiment, and historical trends.</p>
+                    <p class="project-tech"><strong>Tech:</strong> Python, Pandas, Scikit-learn, TensorFlow, spaCy, NLTK</p>
+                    <a href="https://github.com/Waqas56jb/Algorithmic-Trading-Using-Ml-DL-NLP" class="btn-custom">View on GitHub</a>
                 </div>
+                <!-- Project 7 -->
                 <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./public/assets/cartoon.PNG" alt="Image-to-Cartoon" class="project-image">
+                    <img src="./assets/cartoon.PNG" alt="Image-to-Cartoon" class="project-image">
                     <h3>Image-to-Cartoon Sketch Generation</h3>
-                    <p>A deep learning project converting real images into cartoon sketches using GANs.</p>
+                    <p>A deep learning-based project that converts real images into cartoon sketches using GANs
+                        (Generative Adversarial Networks) or neural style transfer.</p>
                     <p class="project-tech"><strong>Tech:</strong> Python, OpenCV, TensorFlow, Keras, PyTorch, HTML</p>
-                    <a href="https://github.com/Waqas56jb/Image-to-Cartoon-Sketch-Genration" class="btn-custom">View on
-                        GitHub</a>
+                    <a href="https://github.com/Waqas56jb/Image-to-Cartoon-Sketch-Genration" class="btn-custom">View on GitHub</a>
                 </div>
+                <!-- Project 8 -->
                 <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./public/assets/all langauge translator.jpg" alt="English-to-Urdu Translation"
-                        class="project-image">
+                    <img src="./assets/all langauge translator.jpg" alt="English-to-Urdu Translation" class="project-image">
                     <h3>English-to-Urdu Translation using RNN and LSTM Model</h3>
-                    <p>An RNN and LSTM-based model for English-to-Urdu translation.</p>
+                    <p>A recurrent neural network (RNN) and Long Short-Term Memory (LSTM)-based translation model for
+                        converting English text into Urdu, improving translation fluency.</p>
                     <p class="project-tech"><strong>Tech:</strong> Python, TensorFlow, PyTorch, Keras</p>
-                    <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App"
-                        class="btn-custom">View on GitHub</a>
+                    <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App" class="btn-custom">View on GitHub</a>
                 </div>
+                <!-- Project 9 -->
                 <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./public/assets/house.PNG" alt="House Price Prediction" class="project-image">
+                    <img src="./assets/house.PNG" alt="House Price Prediction" class="project-image">
                     <h3>House Price Prediction Model with Deployment on Render</h3>
-                    <p>A machine learning model predicting house prices, deployed on Render.</p>
+                    <p>A machine learning model predicting house prices based on features like location, size, and
+                        amenities, deployed on Render for live usage.</p>
                     <p class="project-tech"><strong>Tech:</strong> Python, Scikit-learn, Flask, Render</p>
                     <a href="https://github.com/Waqas56jb/HousesPricePrediction" class="btn-custom">View on GitHub</a>
                 </div>
@@ -254,7 +648,10 @@
             <h2 class="animate__animated animate__fadeInDown">Contact Me</h2>
             <div class="contact-details animate__animated animate__fadeInUp">
                 <p><i class="fas fa-phone"></i> +92477603854</p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:waqas56jb@gmail.com">waqas56jb@gmail.com</a></p>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:waqas56jb@gmail.com">waqas56jb@gmail.com</a>
+                </p>
                 <p><i class="fas fa-map-marker-alt"></i> Faisalabad, Pakistan</p>
             </div>
         </div>
@@ -264,8 +661,7 @@
     <footer class="animate__animated animate__fadeInUp">
         <p>© 2025 Waqas Naveed. All Rights Reserved.</p>
         <div class="connect-links">
-            <a href="https://www.linkedin.com/in/waqas-naveed-630297247/" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/waqas-naveed-630297247/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/Waqas56jb" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://medium.com/@waqas56jb" target="_blank"><i class="fab fa-medium"></i></a>
         </div>
@@ -277,7 +673,122 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/public/scripts.js"></script>
+    <script>
+        // Particles.js Initialization
+        document.addEventListener('DOMContentLoaded', function () {
+            if (document.getElementById("particles-js")) {
+                var pJS = particlesJS("particles-js", {
+                    "particles": {
+                        "number": {
+                            "value": 100,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#00ffff"
+                        },
+                        "shape": {
+                            "type": "circle"
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": true
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#ff00ff",
+                            "opacity": 0.4,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 2,
+                            "direction": "none",
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out"
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "repulse"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            }
+                        },
+                        "modes": {
+                            "repulse": {
+                                "distance": 100
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+
+                // Resize Handler
+                window.addEventListener('resize', function () {
+                    pJS.fn.resize();
+                });
+            }
+        });
+
+        // Smooth Scrolling
+        $('a.nav-link').on('click', function (event) {
+            if (this.hash !== '') {
+                event.preventDefault();
+                const hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - 70
+                }, 800);
+            }
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function () {
+            const btn = document.getElementById("back-to-top");
+            if (window.scrollY > 300) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        });
+
+        document.getElementById("back-to-top").addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Timeline Animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+    </script>
 </body>
 
 </html>
