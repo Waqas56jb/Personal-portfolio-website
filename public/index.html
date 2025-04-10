@@ -4,279 +4,531 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Waqas Naveed - Data Science & AI Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Font Awesome for Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-    <!-- Animate.css -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+    <title>Waqas Naveed - AI & Data Science Portfolio</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Custom Styles -->
     <link rel="stylesheet" href="./styles.css" />
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
+    <!-- Floating Particles Background -->
+    <div class="particles-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand animate__animated animate__fadeIn" href="#">Waqas Naveed</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="#about">About</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn"
-                            href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link animate__animated animate__fadeIn"
-                            href="#contact">Contact</a></li>
-                </ul>
+            <a href="#" class="logo" data-aos="fade-right">WN</a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-aos="fade-down" data-aos-delay="100">Home</a>
+                <a href="#about" class="nav-link" data-aos="fade-down" data-aos-delay="200">About</a>
+                <a href="#skills" class="nav-link" data-aos="fade-down" data-aos-delay="300">Skills</a>
+                <a href="#projects" class="nav-link" data-aos="fade-down" data-aos-delay="400">Projects</a>
+                <a href="#contact" class="nav-link" data-aos="fade-down" data-aos-delay="500">Contact</a>
+            </div>
+            <div class="hamburger" data-aos="fade-left">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
         </div>
     </nav>
 
-    <!-- Intro Section -->
-    <section id="home" class="intro-section">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <div class="row align-items-center text-center text-md-left">
-                <div class="col-md-6 intro-image">
-                    <img src="./profile2.png" alt="Waqas Naveed" class="animate__animated animate__zoomIn" />
+            <div class="hero-content">
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="name">Waqas Naveed</span>
+                </h1>
+                <h2 class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">AI Engineer & Data Scientist</h2>
+                <p class="hero-text" data-aos="fade-up" data-aos-delay="500">
+                    Transforming data into intelligent solutions through machine learning and artificial intelligence.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
                 </div>
-                <div class="col-md-6">
-                    <h1 class="animate__animated animate__fadeInUp">Waqas Naveed</h1>
-                    <p class="intro-text animate__animated animate__fadeInUp animate__delay-1s">
-                        Data Science Enthusiast | AI Engineer | Machine Learning Expert
-                    </p>
-                    <a href="#projects" class="btn-custom animate__animated animate__fadeInUp animate__delay-2s">Explore
-                        My Work</a>
-                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="700">
+                <img src="./profile2.png" alt="Waqas Naveed" class="profile-img">
+                
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section about">
         <div class="container">
-            <h2 class="animate__animated animate__fadeInDown">About Me</h2>
-            <div class="about-content animate__animated animate__fadeInUp">
-                <p>
-                    Motivated Computer Science student with a solid foundation in Artificial Intelligence, Machine
-                    Learning, NLP, Data Science, Data Engineering, and Generative AI technologies. Eager to apply
-                    technical expertise to contribute to rapid prototyping and Proof of Concepts (PoCs) in Generative
-                    AI, leveraging Python and related frameworks. Seeking an opportunity to collaborate with industry
-                    professionals and develop innovative solutions.
-                </p>
-                <div class="timeline">
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <h4>Education</h4>
-                            <p>BS Computer Science, Fast National University of Computer and Emerging Sciences, 2021 -
-                                2025</p>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="./profile2.png" alt="Waqas Naveed">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <h3>Who am I?</h3>
+                    <p>
+                        I'm a passionate Computer Science student specializing in Artificial Intelligence and Data Science at FAST National University. 
+                        With expertise in machine learning, NLP, and generative AI, I build intelligent systems that solve real-world problems.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <div>
+                                <h4>Education</h4>
+                                <p>BS Computer Science, FAST-NUCES (2021-2025)</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <h4>Experience</h4>
+                                <p>AI Engineer (Freelance, 2023-Present)</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Faisalabad, Pakistan</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
-                            <h4>Work Experience</h4>
-                            <p>Artificial Intelligence Engineer, Freelancing and Online Paid Projects, December 2023 –
-                                Present</p>
-                            <ul>
-                                <li>Trained and fine-tuned AI and ML models to achieve high accuracy and optimal
-                                    performance.</li>
-                                <li>Built Retrieval-Augmented Generation (RAG) systems using LangChain for enhanced
-                                    query responses.</li>
-                                <li>Deployed scalable AI solutions on cloud platforms (AWS, GCP).</li>
-                                <li>Collaborated on technical problem-solving with a team of AI experts.</li>
-                                <li>Communicated complex AI concepts effectively to clients.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <div class="timeline-icon"><i class="fas fa-hands-helping"></i></div>
-                            <h4>Volunteer</h4>
-                            <p>University Top Programmer Team, Fast National University, Sep 2021 - Present</p>
-                            <ul>
-                                <li>Organized tech events and workshops as part of the Tech Team.</li>
-                                <li>Enhanced collaboration, communication, and organizational skills.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <div class="timeline-icon"><i class="fas fa-certificate"></i></div>
-                            <h4>Certifications</h4>
-                            <ul>
-                                <li>Zidio Development Data Science, Aug 2024</li>
-                                <li>CodeAgentic DeepLearning.AI, February 2025</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <a href="./assets/Rana Waqas Naveed Data Science CV.pdf" download class="btn btn-primary" data-aos="fade-up">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section">
+    <section id="skills" class="section skills">
         <div class="container">
-            <h2 class="animate__animated animate__fadeInDown">Skills & Expertise</h2>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">My Skills</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
             <div class="skills-grid">
-                <div class="skill-card animate__animated animate__fadeInUp">
-                    <i class="fas fa-brain"></i>
-                    <h3>Artificial Intelligence</h3>
-                    <p>LLMs (Fine-tuning, Retrieval-Augmented Generation, Transformers, Prompt Engineering), NLP,
-                        Machine Learning (Regression, Classification, Clustering), Deep Learning (TensorFlow, Keras),
-                        Computer Vision, Gemini, OpenAI, Hugging Face, Scikit-Learn, Flask, FastAPI</p>
+                <!-- AI/ML Skills -->
+                <div class="skill-category" data-aos="fade-up">
+                    <h3 class="category-title">
+                        <i class="fas fa-brain"></i> AI & Machine Learning
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>TensorFlow/Keras</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>PyTorch</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>NLP</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-card animate__animated animate__fadeInUp animate__delay-1s">
-                    <i class="fas fa-database"></i>
-                    <h3>Data Science</h3>
-                    <p>Data Collection, Data Preprocessing, Model Training, Predictive Analysis, Cross Validation, Web
-                        Scraping, Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn, PyTorch, TensorFlow, Keras, SQL,
-                        PowerBI, Statistical Analysis</p>
+                
+                <!-- Data Science Skills -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="category-title">
+                        <i class="fas fa-database"></i> Data Science
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Pandas/Numpy</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Data Visualization</span>
+                                <span>87%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>SQL</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Big Data</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-card animate__animated animate__fadeInUp animate__delay-2s">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Data Engineering</h3>
-                    <p>Python, SQL, Hadoop, Data Ingestion, Apache Spark, Scala, Apache Airflow, Kafka, Data Lakes,
-                        ETL/ELT, Azure Data Factory, Snowflake, Data Bricks</p>
+                
+                <!-- Other Skills -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="category-title">
+                        <i class="fas fa-code"></i> Development
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Flask/FastAPI</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Docker</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Cloud (AWS/GCP)</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Git</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
+    <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="animate__animated animate__fadeInDown">Projects</h2>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">Featured work and case studies</p>
+            </div>
             <div class="projects-grid">
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./assets/healthgenix.png" alt="HealthGenics" class="project-image">
-                    <h3>HealthGenics – Final Year Project</h3>
-                    <p>Developed an AI-powered fitness and rehabilitation app focusing on body position detection,
-                        workout plans, and injury recovery. Utilized MediaPipe for body position tracking, React Native
-                        for front-end, and Flask for backend model deployment.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Python, MediaPipe, React Native, Flask</p>
-                    <a href="https://github.com/Waqas56jb/HealthGenix-Online-Gym-Training-App" class="btn-custom">View
-                        on GitHub</a>
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="./assets/healthgenix.png" alt="HealthGenix">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Waqas56jb/HealthGenix-Online-Gym-Training-App" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>HealthGenix Fitness App</h3>
+                        <p class="project-description">
+                            AI-powered fitness app with body position detection using MediaPipe and React Native.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">MediaPipe</span>
+                            <span class="tag">React Native</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./assets/webscrapper.png" alt="Automated Web Scraper" class="project-image">
-                    <h3>Automated Web Scraper & Email Outreach System</h3>
-                    <p>Developed a dynamic web scraping tool to extract emails, phone numbers, and contact details from
-                        websites. Integrated an automated email-sending system using SMTP.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Python, Scrapy, Selenium, BeautifulSoup, SMTP</p>
-                    <a href="https://github.com/Waqas56jb/Webscrapping-End-to-End-Project-Automation"
-                        class="btn-custom">View on GitHub</a>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="./assets/webscrapper.png" alt="Web Scraper">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Waqas56jb/Webscrapping-End-to-End-Project-Automation" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Automated Web Scraper</h3>
+                        <p class="project-description">
+                            Dynamic web scraping tool with automated email outreach system.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scrapy</span>
+                            <span class="tag">Selenium</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./assets/vehicle.PNG" alt="Emergency Vehicle Detection" class="project-image">
-                    <h3>Emergency Vehicle Detection System</h3>
-                    <p>Developed a deep learning model for detecting emergency vehicles using image data with TensorFlow
-                        and Keras.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Python, TensorFlow, Keras</p>
-                    <a href="https://github.com/Waqas56jb/Emergencey-Vehicle-Recognization" class="btn-custom">View on
-                        GitHub</a>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="./assets/vehicle.PNG" alt="Vehicle Detection">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Waqas56jb/Emergencey-Vehicle-Recognization" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Emergency Vehicle Detection</h3>
+                        <p class="project-description">
+                            Deep learning model for detecting emergency vehicles using TensorFlow.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">Computer Vision</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./assets/english-to-arabic.PNG" alt="Arabic-to-English Translator"
-                        class="project-image">
-                    <h3>Transformer-based Seq2Seq Model: Arabic-to-English Translator App</h3>
-                    <p>A neural machine translation model using transformers for Arabic-to-English conversion.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Python, TensorFlow, PyTorch, Hugging Face
-                        Transformers</p>
-                    <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App"
-                        class="btn-custom">View on GitHub</a>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="./assets/english-to-arabic.PNG" alt="Arabic Translator">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Arabic-English Translator</h3>
+                        <p class="project-description">
+                            Transformer-based Seq2Seq model for Arabic-to-English translation.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Transformers</span>
+                            <span class="tag">NLP</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./assets/top translator.PNG" alt="GenAI Translation" class="project-image">
-                    <h3>GenAI Arabic-to-English Translation</h3>
-                    <p>A generative AI-based translation model enhancing quality using deep learning techniques.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Python, OpenAI GPT, Llama, TensorFlow, PyTorch</p>
-                    <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App"
-                        class="btn-custom">View on GitHub</a>
+                
+                <!-- Project 5 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="./assets/algorithmic trading.PNG" alt="Algorithmic Trading">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Waqas56jb/Algorithmic-Trading-Using-Ml-DL-NLP" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Algorithmic Trading System</h3>
+                        <p class="project-description">
+                            ML, DL, and NLP based stock market prediction system.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">NLP</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./assets/algorithmic trading.PNG" alt="Algorithmic Trading" class="project-image">
-                    <h3>Algorithmic Trading Using ML, DL, and NLP</h3>
-                    <p>A stock market prediction system using ML, DL, and NLP to analyze financial data and news
-                        sentiment.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Python, Pandas, Scikit-learn, TensorFlow, spaCy, NLTK
-                    </p>
-                    <a href="https://github.com/Waqas56jb/Algorithmic-Trading-Using-Ml-DL-NLP" class="btn-custom">View
-                        on GitHub</a>
-                </div>
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./assets/cartoon.PNG" alt="Image-to-Cartoon" class="project-image">
-                    <h3>Image-to-Cartoon Sketch Generation</h3>
-                    <p>A deep learning project converting real images into cartoon sketches using GANs.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Python, OpenCV, TensorFlow, Keras, PyTorch, HTML</p>
-                    <a href="https://github.com/Waqas56jb/Image-to-Cartoon-Sketch-Genration" class="btn-custom">View on
-                        GitHub</a>
-                </div>
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./assets/all langauge translator.jpg" alt="English-to-Urdu Translation"
-                        class="project-image">
-                    <h3>English-to-Urdu Translation using RNN and LSTM Model</h3>
-                    <p>An RNN and LSTM-based model for English-to-Urdu translation.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Python, TensorFlow, PyTorch, Keras</p>
-                    <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App"
-                        class="btn-custom">View on GitHub</a>
-                </div>
-                <div class="project-card animate__animated animate__fadeInUp">
-                    <img src="./assets/house.PNG" alt="House Price Prediction" class="project-image">
-                    <h3>House Price Prediction Model with Deployment on Render</h3>
-                    <p>A machine learning model predicting house prices, deployed on Render.</p>
-                    <p class="project-tech"><strong>Tech:</strong> Python, Scikit-learn, Flask, Render</p>
-                    <a href="https://github.com/Waqas56jb/HousesPricePrediction" class="btn-custom">View on GitHub</a>
+                
+                <!-- Project 6 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="./assets/house.PNG" alt="House Price Prediction">
+                        <div class="project-overlay">
+                            <a href="https://github.com/Waqas56jb/HousesPricePrediction" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>House Price Prediction</h3>
+                        <p class="project-description">
+                            ML model for house price prediction deployed on Render.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">Flask</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="animate__animated animate__fadeInDown">Contact Me</h2>
-            <div class="contact-details animate__animated animate__fadeInUp">
-                <p><i class="fas fa-phone"></i> +92477603854</p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:waqas56jb@gmail.com">waqas56jb@gmail.com</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Faisalabad, Pakistan</p>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:waqas56jb@gmail.com">waqas56jb@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+92477603854">+92 477 603854</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Faisalabad, Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/waqas-naveed-630297247/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Waqas56jb" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://medium.com/@waqas56jb" target="_blank" class="social-link">
+                            <i class="fab fa-medium"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" data-aos="fade-left">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="animate__animated animate__fadeInUp">
-        <p>© 2025 Waqas Naveed. All Rights Reserved.</p>
-        <div class="connect-links">
-            <a href="https://www.linkedin.com/in/waqas-naveed-630297247/" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Waqas56jb" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://medium.com/@waqas56jb" target="_blank"><i class="fab fa-medium"></i></a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo" data-aos="fade-right">
+                    <a href="#">WN</a>
+                    <p>AI Engineer & Data Scientist</p>
+                </div>
+                <div class="footer-links" data-aos="fade-up">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> waqas56jb@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +92 477 603854</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Faisalabad, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" data-aos="fade-up">
+                <p>&copy; 2025 Waqas Naveed. All Rights Reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/waqas-naveed-630297247/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Waqas56jb" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://medium.com/@waqas56jb" target="_blank"><i class="fab fa-medium"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="btn">Back to Top</button>
+    <a href="#home" class="back-to-top" data-aos="fade-up">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./scripts.js"></script>
 </body>
 
