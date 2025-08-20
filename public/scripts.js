@@ -22,10 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
 
     // Close mobile menu when clicking a link
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -109,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 },
                 "color": {
-                    "value": "#6c63ff"
+                    "value": "#2563eb"
                 },
                 "shape": {
                     "type": "circle",
@@ -144,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
-                    "color": "#6c63ff",
+                    "color": "#2563eb",
                     "opacity": 0.2,
                     "width": 1
                 },
@@ -203,6 +205,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             },
             "retina_detect": true
+        });
+    }
+
+    // Theme toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+    if (isDark) {
+        document.body.classList.add('dark');
+        if (themeToggle) {
+            themeToggle.setAttribute('aria-pressed', 'true');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    } else if (themeToggle) {
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const willBeDark = !document.body.classList.contains('dark');
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', willBeDark ? 'dark' : 'light');
+            themeToggle.setAttribute('aria-pressed', willBeDark ? 'true' : 'false');
+            themeToggle.innerHTML = willBeDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         });
     }
 

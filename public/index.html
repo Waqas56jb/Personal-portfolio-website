@@ -5,9 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waqas Naveed - AI & Data Science Portfolio</title>
+    <meta name="description" content="Portfolio of Waqas Naveed, AI Engineer & Data Scientist specializing in ML, NLP, Computer Vision, MLOps, and scalable data systems.">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://personal-portfolio-website-opal-five.vercel.app/">
+    <meta property="og:title" content="Waqas Naveed - AI & Data Science Portfolio">
+    <meta property="og:description" content="AI Engineer & Data Scientist building production-ready ML solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://personal-portfolio-website-opal-five.vercel.app/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&w=1200&q=80">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -18,6 +29,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- Preloader -->
     <div class="preloader">
         <div class="loader">
@@ -55,11 +67,17 @@
                 <a href="#home" class="nav-link active" data-aos="fade-down" data-aos-delay="100">Home</a>
                 <a href="#about" class="nav-link" data-aos="fade-down" data-aos-delay="200">About</a>
                 <a href="#skills" class="nav-link" data-aos="fade-down" data-aos-delay="300">Skills</a>
+                <a href="#experience" class="nav-link" data-aos="fade-down" data-aos-delay="350">Experience</a>
                 <a href="#projects" class="nav-link" data-aos="fade-down" data-aos-delay="400">Projects</a>
                 <a href="#services" class="nav-link" data-aos="fade-down" data-aos-delay="450">Services</a>
+                <a href="#certifications" class="nav-link" data-aos="fade-down" data-aos-delay="475">Certifications</a>
+                <a href="#testimonials" class="nav-link" data-aos="fade-down" data-aos-delay="490">Testimonials</a>
                 <a href="#contact" class="nav-link" data-aos="fade-down" data-aos-delay="500">Contact</a>
-                <a href="./assets/Rana Waqas Naveed Data Science CV.pdf" class="btn btn-primary nav-btn" data-aos="fade-down" data-aos-delay="600">Download CV</a>
+                <a href="./assets/Rana Waqas Naveed Data Science CV.pdf" class="btn btn-primary nav-btn" data-aos="fade-down" data-aos-delay="600" download>Download CV</a>
             </div>
+            <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" data-aos="fade-left" title="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
             <div class="hamburger" data-aos="fade-left">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -68,6 +86,7 @@
         </div>
     </nav>
 
+    <main id="main-content" tabindex="-1" role="main">
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
@@ -87,32 +106,126 @@
                 <div class="hero-social" data-aos="fade-up" data-aos-delay="600">
                     <span>Follow me:</span>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/waqas-naveed-630297247/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/Waqas56jb" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://medium.com/@waqas56jb" target="_blank"><i class="fab fa-medium"></i></a>
-                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/waqas-naveed-630297247/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Waqas56jb" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@waqas56jb" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
             <div class="hero-image" data-aos="fade-left" data-aos-delay="700">
                 <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Data Science" class="hero-bg">
+                    <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Data Science" class="hero-bg" loading="eager" fetchpriority="high">
                     <div class="floating-tech">
                         <div class="tech-icon" style="--i:1">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" loading="lazy">
                         </div>
                         <div class="tech-icon" style="--i:2">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" loading="lazy">
                         </div>
                         <div class="tech-icon" style="--i:3">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" loading="lazy">
                         </div>
                         <div class="tech-icon" style="--i:4">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" loading="lazy">
                         </div>
                         <div class="tech-icon" style="--i:5">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" loading="lazy">
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section certifications">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h4 class="section-subtitle">Credentials</h4>
+                <h2 class="section-title">Certifications</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="certs-grid">
+                <div class="cert-card" data-aos="fade-up">
+                    <div class="cert-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Advanced Data Science Specialization</h3>
+                    </div>
+                    <p>Coursera, 2023 — ML, Deep Learning, MLOps, and deployment best practices.</p>
+                </div>
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="cert-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>TensorFlow Developer</h3>
+                    </div>
+                    <p>Computer Vision, NLP, and time-series with production-ready pipelines.</p>
+                </div>
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="cert-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Cloud Practitioner</h3>
+                    </div>
+                    <p>Foundational cloud, containers, and cost-efficient deployments on AWS/GCP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h4 class="section-subtitle">What clients say</h4>
+                <h2 class="section-title">Testimonials</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <p class="quote">“Waqas delivered a robust ML pipeline and deployed it seamlessly to production. Outstanding quality.”</p>
+                    <div class="author">
+                        <span class="name">Product Lead</span>
+                        <span class="role">HealthTech Startup</span>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <p class="quote">“Great communication and engineering rigor. The model exceeded our accuracy targets.”</p>
+                    <div class="author">
+                        <span class="name">CTO</span>
+                        <span class="role">FinTech Company</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h4 class="section-subtitle">Career journey</h4>
+                <h2 class="section-title">Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">AI Engineer (Freelance)</h3>
+                        <span class="timeline-meta">2023 – Present</span>
+                        <p>Delivered end-to-end ML solutions: data pipelines, model training, deployment, and monitoring across NLP and CV.</p>
+                        <ul>
+                            <li>Built real-time inference APIs with Flask/FastAPI and Docker</li>
+                            <li>Implemented CI/CD and experiment tracking (MLflow)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Data Science Intern</h3>
+                        <span class="timeline-meta">Summer 2022</span>
+                        <p>Developed predictive models, performed feature engineering, and produced stakeholder-ready dashboards.</p>
                     </div>
                 </div>
             </div>
@@ -130,7 +243,7 @@
             <div class="about-content">
                 <div class="about-image" data-aos="fade-right">
                     <div class="image-container">
-                        <img src="./profile2.png" alt="About Me">
+                        <img src="./profile2.png" alt="About Me" loading="lazy">
                         <div class="experience-badge">
                             <div class="badge-content">
                                 <span class="years">3+</span>
@@ -565,9 +678,9 @@
                 <!-- Project 1 -->
                 <div class="project-card" data-category="ai" data-aos="fade-up">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="HealthGenix">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="HealthGenix" loading="lazy">
                         <div class="project-overlay">
-                            <a href="https://github.com/Waqas56jb/HealthGenix-Online-Gym-Training-App" target="_blank" class="project-link">
+                            <a href="https://github.com/Waqas56jb/HealthGenix-Online-Gym-Training-App" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -582,7 +695,7 @@
                         <p class="project-description">
                             AI-powered fitness app with real-time body position detection using MediaPipe and React Native for cross-platform deployment.
                         </p>
-                        <a href="https://github.com/Waqas56jb/HealthGenix-Online-Gym-Training-App" target="_blank" class="project-details">
+                        <a href="https://github.com/Waqas56jb/HealthGenix-Online-Gym-Training-App" target="_blank" rel="noopener noreferrer" class="project-details">
                             View Details <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -591,9 +704,9 @@
                 <!-- Project 2 -->
                 <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Web Scraper">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Web Scraper" loading="lazy">
                         <div class="project-overlay">
-                            <a href="https://github.com/Waqas56jb/Webscrapping-End-to-End-Project-Automation" target="_blank" class="project-link">
+                            <a href="https://github.com/Waqas56jb/Webscrapping-End-to-End-Project-Automation" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -608,7 +721,7 @@
                         <p class="project-description">
                             Distributed web scraping system with automated data cleaning, storage, and email outreach capabilities.
                         </p>
-                        <a href="https://github.com/Waqas56jb/Webscrapping-End-to-End-Project-Automation" target="_blank" class="project-details">
+                        <a href="https://github.com/Waqas56jb/Webscrapping-End-to-End-Project-Automation" target="_blank" rel="noopener noreferrer" class="project-details">
                             View Details <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -617,9 +730,9 @@
                 <!-- Project 3 -->
                 <div class="project-card" data-category="ai" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Vehicle Detection">
+                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Vehicle Detection" loading="lazy">
                         <div class="project-overlay">
-                            <a href="https://github.com/Waqas56jb/Emergencey-Vehicle-Recognization" target="_blank" class="project-link">
+                            <a href="https://github.com/Waqas56jb/Emergencey-Vehicle-Recognization" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -634,7 +747,7 @@
                         <p class="project-description">
                             Deep learning model for detecting emergency vehicles in traffic using transfer learning with TensorFlow.
                         </p>
-                        <a href="https://github.com/Waqas56jb/Emergencey-Vehicle-Recognization" target="_blank" class="project-details">
+                        <a href="https://github.com/Waqas56jb/Emergencey-Vehicle-Recognization" target="_blank" rel="noopener noreferrer" class="project-details">
                             View Details <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -643,9 +756,9 @@
                 <!-- Project 4 -->
                 <div class="project-card" data-category="ai" data-aos="fade-up">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1633&q=80" alt="Arabic Translator">
+                        <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1633&q=80" alt="Arabic Translator" loading="lazy">
                         <div class="project-overlay">
-                            <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App" target="_blank" class="project-link">
+                            <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -660,7 +773,7 @@
                         <p class="project-description">
                             Transformer-based Seq2Seq model for Arabic-to-English translation with attention mechanisms.
                         </p>
-                        <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App" target="_blank" class="project-details">
+                        <a href="https://github.com/Waqas56jb/Using-Transformers-Based-Seq2Seq-Model-Arabic-to-English-Translater-App" target="_blank" rel="noopener noreferrer" class="project-details">
                             View Details <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -669,9 +782,9 @@
                 <!-- Project 5 -->
                 <div class="project-card" data-category="deployment" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Algorithmic Trading">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Algorithmic Trading" loading="lazy">
                         <div class="project-overlay">
-                            <a href="https://github.com/Waqas56jb/Algorithmic-Trading-Using-Ml-DL-NLP" target="_blank" class="project-link">
+                            <a href="https://github.com/Waqas56jb/Algorithmic-Trading-Using-Ml-DL-NLP" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -686,7 +799,7 @@
                         <p class="project-description">
                             ML, DL, and NLP based stock market prediction system deployed as a Flask API with React frontend.
                         </p>
-                        <a href="https://github.com/Waqas56jb/Algorithmic-Trading-Using-Ml-DL-NLP" target="_blank" class="project-details">
+                        <a href="https://github.com/Waqas56jb/Algorithmic-Trading-Using-Ml-DL-NLP" target="_blank" rel="noopener noreferrer" class="project-details">
                             View Details <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -695,9 +808,9 @@
                 <!-- Project 6 -->
                 <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="House Price Prediction">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="House Price Prediction" loading="lazy">
                         <div class="project-overlay">
-                            <a href="https://github.com/Waqas56jb/HousesPricePrediction" target="_blank" class="project-link">
+                            <a href="https://github.com/Waqas56jb/HousesPricePrediction" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -712,7 +825,7 @@
                         <p class="project-description">
                             ML model for house price prediction deployed as a web application with Flask backend and interactive UI.
                         </p>
-                        <a href="https://github.com/Waqas56jb/HousesPricePrediction" target="_blank" class="project-details">
+                        <a href="https://github.com/Waqas56jb/HousesPricePrediction" target="_blank" rel="noopener noreferrer" class="project-details">
                             View Details <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -763,29 +876,29 @@
                     <div class="contact-social">
                         <h4>Follow Me</h4>
                         <div class="social-links">
-                            <a href="https://www.linkedin.com/in/waqas-naveed-630297247/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/Waqas56jb" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://medium.com/@waqas56jb" target="_blank"><i class="fab fa-medium"></i></a>
-                            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/waqas-naveed-630297247/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/Waqas56jb" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://medium.com/@waqas56jb" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
                 <form class="contact-form" data-aos="fade-left">
                     <div class="form-group">
                         <label for="name">Your Name</label>
-                        <input type="text" id="name" placeholder="Enter your name" required>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required aria-required="true" autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label for="email">Your Email</label>
-                        <input type="email" id="email" placeholder="Enter your email" required>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required aria-required="true" autocomplete="email">
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" id="subject" placeholder="Enter subject">
+                        <input type="text" id="subject" name="subject" placeholder="Enter subject" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="message">Your Message</label>
-                        <textarea id="message" placeholder="Enter your message" required></textarea>
+                        <textarea id="message" name="message" placeholder="Enter your message" required aria-required="true"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-paper-plane"></i> Send Message
@@ -794,6 +907,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -806,9 +920,9 @@
                     </a>
                     <p>AI Engineer & Data Scientist creating intelligent solutions through cutting-edge technology.</p>
                     <div class="footer-social">
-                        <a href="https://www.linkedin.com/in/waqas-naveed-630297247/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/Waqas56jb" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://medium.com/@waqas56jb" target="_blank"><i class="fab fa-medium"></i></a>
+                        <a href="https://www.linkedin.com/in/waqas-naveed-630297247/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Waqas56jb" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@waqas56jb" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
