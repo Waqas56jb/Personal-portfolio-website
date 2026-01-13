@@ -1,154 +1,131 @@
- # Waqas Naveed - Data Science & AI Portfolio
+# Waqas Naveed - Data Science & AI Portfolio (React + Tailwind)
 
-https://personal-portfolio-website-opal-five.vercel.app/
-*A state-of-the-art portfolio showcasing my expertise in Data Science, Artificial Intelligence, and Machine Learning.*
+A modern, responsive portfolio website built with React and Tailwind CSS, showcasing expertise in Data Science, Artificial Intelligence, and Machine Learning.
 
----
+## 🚀 Features
 
-## Overview
+- **React-based**: Modern component architecture
+- **Tailwind CSS**: Utility-first styling with dark mode support
+- **Fully Responsive**: Optimized for all devices (desktop, tablet, mobile)
+- **Animations**: Smooth scroll animations using AOS (Animate On Scroll)
+- **Particles Background**: Interactive particle effects
+- **Dark Mode**: Theme toggle with persistent preference
+- **All Original Content**: Every section, detail, and record preserved exactly as original
 
-This is a personal portfolio website designed to highlight my skills, projects, and experiences as a Computer Science student specializing in **Artificial Intelligence**, **Machine Learning**, **Data Science**, and **Generative AI**. The website features a modern, responsive design with a futuristic canvas theme, dynamic animations, and a professional layout.
+## 📋 Prerequisites
 
----
+- Node.js (v14 or higher)
+- npm or yarn
 
-## Features
+## 🛠️ Installation
 
-- **Responsive Design**: Fully optimized for all devices (desktop, tablet, mobile) with readable and scalable content.
-- **Canvas Theme**: A visually stunning background with Particles.js and gradient shading for a futuristic aesthetic.
-- **About Section**: A unique grid-based layout showcasing education, work experience, volunteer work, and certifications with hover effects and animations.
-- **Projects Showcase**: A grid of project cards with images, descriptions, tech stacks, and GitHub links.
-- **Skills & Expertise**: Highlighted technical skills in AI, Data Science, and Data Engineering with elegant card designs.
-- **Contact & Social Links**: Easy access to contact details and professional profiles (LinkedIn, GitHub, Medium).
-- **Smooth Animations**: Powered by Animate.css for a polished user experience.
-- **Back-to-Top Button**: Enhances navigation on long pages.
-
----
-
-## Tech Stack
-
-- **HTML5**: Structure and content.
-- **CSS3**: Custom styling with gradients, shadows, and animations.
-- **Bootstrap 5**: Responsive grid system and components.
-- **JavaScript**: Interactivity, smooth scrolling, and Particles.js integration.
-- **jQuery**: Simplified DOM manipulation and event handling.
-- **Font Awesome**: Icons for visual enhancement.
-- **Google Fonts**: Poppins and Roboto Mono for modern typography.
-- **Particles.js**: Dynamic background particles.
-- **Animate.css**: Pre-built CSS animations.
-
----
-
-## Setup Instructions
-
-### Prerequisites
-- A modern web browser (Chrome, Firefox, Edge, etc.).
-- Basic knowledge of HTML, CSS, and JavaScript for customization.
-
-### Installation
-1. **Clone the Repository**:
+1. **Install Dependencies**:
    ```bash
-   git clone https://github.com/Waqas56jb/Portfolio.git
-   cd Portfolio
+   npm install
    ```
 
-2. **Open the Project**:
-   - Open `index.html` in your preferred web browser to view the portfolio locally.
+2. **Start Development Server**:
+   ```bash
+   npm start
+   ```
+   The app will open at [http://localhost:3000](http://localhost:3000)
 
-3. **Customize**:
-   - Replace image placeholders (e.g., `./profile2.png`, `./assets/healthgenix.png`) with your own images in the respective directories.
-   - Update content (e.g., name, projects, contact details) in `index.html`.
-   - Modify styles in the `<style>` section of `index.html` to suit your preferences.
+3. **Build for Production**:
+   ```bash
+   npm run build
+   ```
 
-4. **Deploy (Optional)**:
-   - Host on platforms like GitHub Pages, Netlify, or Vercel for public access.
-   - Example for GitHub Pages:
-     1. Push the repository to GitHub.
-     2. Go to repository settings, enable GitHub Pages, and select the `main` branch.
-
----
-
-## Project Structure
+## 📁 Project Structure
 
 ```
-Portfolio/
-├── index.html          # Main HTML file with all content and styles
-├── assets/             # Folder for project images
-│   ├── healthgenix.png
-│   ├── webscrapper.png
-│   ├── vehicle.PNG
-│   └── ...             # Add more project images here
-├── profile2.png        # Profile picture (replace with your own)
-└── README.md           # This file
+Personal-portfolio-website/
+├── public/
+│   ├── index.html          # HTML template
+│   └── profile2.png        # Profile image (add your image here)
+├── src/
+│   ├── components/         # React components
+│   │   ├── About.js
+│   │   ├── BackToTop.js
+│   │   ├── Certifications.js
+│   │   ├── Contact.js
+│   │   ├── Experience.js
+│   │   ├── Footer.js
+│   │   ├── Hero.js
+│   │   ├── Navbar.js
+│   │   ├── ParticlesBackground.js
+│   │   ├── Preloader.js
+│   │   ├── Projects.js
+│   │   ├── Services.js
+│   │   ├── Skills.js
+│   │   └── Testimonials.js
+│   ├── App.js              # Main App component
+│   ├── index.js            # React entry point
+│   └── index.css           # Global styles with Tailwind
+├── package.json
+├── tailwind.config.js      # Tailwind configuration
+└── postcss.config.js       # PostCSS configuration
 ```
 
----
+## 🎨 Customization
 
-## Usage
+### Update Profile Image
+Place your profile image in the `public/` folder and name it `profile2.png`, or update the path in `src/components/About.js`.
 
-- Navigate through sections using the sticky navbar.
-- Hover over cards in the "About," "Skills," and "Projects" sections for interactive effects.
-- Click project links to visit their GitHub repositories.
-- Use the "Back to Top" button to return to the top of the page.
+### Update Content
+All content is preserved exactly as the original. To update:
+- Personal information: Edit `src/components/Hero.js`, `src/components/Contact.js`
+- Projects: Edit `src/components/Projects.js`
+- Skills: Edit `src/components/Skills.js`
+- Experience: Edit `src/components/Experience.js`
+- And so on for each section
 
----
+### Styling
+All styles use Tailwind CSS classes. Custom colors and themes are defined in `tailwind.config.js`.
 
-## Screenshots
+## 📦 Technologies Used
 
-### Home Section
-![Home Section](https://via.placeholder.com/800x400.png?text=Home+Section)
+- **React 18**: UI library
+- **Tailwind CSS 3**: Utility-first CSS framework
+- **AOS**: Animate On Scroll library
+- **Particles.js**: Background particle effects
+- **Font Awesome**: Icons
+- **Google Fonts**: Poppins & Playfair Display
 
-### About Section
-![About Section](https://via.placeholder.com/800x400.png?text=About+Section)
+## 🌐 Deployment
 
-### Projects Section
-![Projects Section](https://via.placeholder.com/800x400.png?text=Projects+Section)
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Import project in Vercel
+3. Deploy automatically
 
-*(Replace placeholder links with actual screenshots after capturing them.)*
+### Netlify
+1. Build the project: `npm run build`
+2. Deploy the `build` folder to Netlify
 
----
+### GitHub Pages
+1. Install gh-pages: `npm install --save-dev gh-pages`
+2. Add to package.json scripts:
+   ```json
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d build"
+   ```
+3. Deploy: `npm run deploy`
 
-## Contributing
+## 📝 Notes
 
-Contributions are welcome! If you'd like to enhance this portfolio:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/enhancement`).
-3. Make your changes and commit (`git commit -m "Add enhancement"`).
-4. Push to the branch (`git push origin feature/enhancement`).
-5. Open a Pull Request.
+- All original content, records, and details are preserved
+- Responsive design matches the original exactly
+- Dark mode functionality included
+- All animations and interactions maintained
+- CV download link preserved (ensure CV file is in `public/assets/` folder)
 
----
+## 📧 Contact
 
-## License
-
-This project is licensed under the MIT License. Feel free to use, modify, and distribute it as needed.
-
----
-
-## Contact
-
-- **Email**: [waqas56jb@gmail.com](mailto:waqas56jb@gmail.com)
+- **Email**: waqas56jb@gmail.com
 - **LinkedIn**: [Waqas Naveed](https://www.linkedin.com/in/waqas-naveed-630297247/)
 - **GitHub**: [Waqas56jb](https://github.com/Waqas56jb)
 - **Medium**: [@waqas56jb](https://medium.com/@waqas56jb)
 
 ---
 
-## Acknowledgments
-
-- [Bootstrap](https://getbootstrap.com/) for responsive design.
-- [Font Awesome](https://fontawesome.com/) for icons.
-- [Particles.js](https://vincentgarreau.com/particles.js/) for background effects.
-- [Animate.css](https://animate.style/) for animations.
-
----
-
-*Built with passion by Waqas Naveed, 2025.*
-
----
-
-### Notes for Customization
-- Replace the placeholder image URLs (e.g., `https://via.placeholder.com/...`) with actual screenshots of your portfolio after deploying or testing locally.
-- Update the repository URL (`https://github.com/Waqas56jb/Portfolio`) to match your actual GitHub repository once created.
-- Add more sections or features as needed (e.g., a blog link, additional certifications).
-
-This `README.md` provides a clear, professional overview of your portfolio project, making it easy for others to understand, use, or contribute to it. Let me know if you'd like any adjustments!
+*Built with React and Tailwind CSS - 2025*

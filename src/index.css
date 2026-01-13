@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-secondary bg-light;
+  }
+  
+  body.dark {
+    @apply bg-[#0b1220] text-[#e2e8f0];
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold text-dark leading-tight;
+  }
+  
+  body.dark h1,
+  body.dark h2,
+  body.dark h3,
+  body.dark h4,
+  body.dark h5,
+  body.dark h6 {
+    @apply text-[#e5e7eb];
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-[100px];
+  }
+  
+  @media (max-width: 1200px) {
+    .section-padding {
+      @apply py-20;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .section-padding {
+      @apply py-[70px];
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .section-padding {
+      @apply py-[60px];
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .section-padding {
+      @apply py-[50px];
+    }
+  }
+}
