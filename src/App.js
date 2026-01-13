@@ -27,6 +27,13 @@ function App() {
   const [showPreloader, setShowPreloader] = useState(true);
 
   useEffect(() => {
+    // Prevent body scroll when preloader is showing
+    if (showPreloader) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
     // Initialize AOS
     AOS.init({
       duration: 800,
@@ -35,12 +42,19 @@ function App() {
       mirror: false
     });
 
-    // Handle preloader
-    window.addEventListener('load', () => {
+    // Handle preloader - check if page is already loaded
+    const handleLoad = () => {
       setTimeout(() => {
         setShowPreloader(false);
-      }, 500);
-    });
+      }, 800);
+    };
+
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+      return () => window.removeEventListener('load', handleLoad);
+    }
 
     // Apply dark mode
     if (isDark) {
@@ -48,7 +62,11 @@ function App() {
     } else {
       document.body.classList.remove('dark');
     }
-  }, [isDark]);
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isDark, showPreloader]);
 
   const toggleTheme = () => {
     const newTheme = !isDark;
@@ -58,34 +76,39 @@ function App() {
 
   return (
     <div className="App">
-      {showPreloader && <Preloader />}
-      <ParticlesBackground />
-      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
-      <main id="main-content" tabIndex="-1" role="main">
-        <Hero />
-        <Certifications />
-        <Testimonials />
-        <Experience />
-        <About />
-        <Skills />
-        <Services />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-      <BackToTop />
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme={isDark ? 'dark' : 'light'}
-      />
+      {showPreloader ? (
+        <Preloader />
+      ) : (
+        <>
+          <ParticlesBackground />
+          <Navbar isDark={isDark} toggleTheme={toggleTheme} />
+          <main id="main-content" tabIndex="-1" role="main">
+            <Hero />
+            <Certifications />
+            <Testimonials />
+            <Experience />
+            <About />
+            <Skills />
+            <Services />
+            <Projects />
+            <Contact />
+          </main>
+          <Footer />
+          <BackToTop />
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme={isDark ? 'dark' : 'light'}
+          />
+        </>
+      )}
     </div>
   );
 }
