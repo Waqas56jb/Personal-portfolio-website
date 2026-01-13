@@ -21,7 +21,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 pb-10 sm:pt-24 sm:pb-12 relative overflow-hidden bg-[#f8fafc] dark:bg-[#0b1220]">
+    <section id="home" className="min-h-screen flex items-center pt-20 pb-10 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16 relative overflow-hidden bg-[#f8fafc] dark:bg-[#0b1220] z-0">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px] flex flex-col lg:flex-row items-center gap-8 lg:gap-12 relative z-10">
         <div className="flex-[2] w-full text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] mb-4 leading-tight" data-aos="fade-up" data-aos-delay="300">

@@ -6,6 +6,33 @@ const Navbar = ({ isDark, toggleTheme }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
+  // Close mobile menu when clicking outside or on window resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    const handleClickOutside = (e) => {
+      if (isMobileMenuOpen && window.innerWidth < 1024) {
+        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger');
+        if (navLinks && hamburger && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          setIsMobileMenuOpen(false);
+        }
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    document.addEventListener('click', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -49,10 +76,19 @@ const Navbar = ({ isDark, toggleTheme }) => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full py-5 bg-white/95 dark:bg-[#0d1220]/85 backdrop-blur-[10px] shadow-sm z-[1000] transition-all ${
-      isScrolled ? 'py-[15px] shadow-md' : ''
-    }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px] flex justify-between items-center">
+    <>
+      {/* Backdrop overlay for mobile menu */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 dark:bg-black/70 z-[998] lg:hidden transition-opacity duration-300"
+          onClick={() => setIsMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+      <nav className={`fixed top-0 left-0 w-full py-5 bg-white/95 dark:bg-[#0d1220]/85 backdrop-blur-[10px] shadow-sm z-[1000] transition-all ${
+        isScrolled ? 'py-[15px] shadow-md' : ''
+      }`}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px] flex justify-between items-center">
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, '#home')}
@@ -63,8 +99,8 @@ const Navbar = ({ isDark, toggleTheme }) => {
           <span className="text-primary">.</span>
         </a>
 
-        <div className={`nav-links flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8 lg:static lg:flex-row lg:w-auto lg:h-auto lg:bg-transparent lg:dark:bg-transparent fixed top-[70px] sm:top-20 left-0 w-full h-[calc(100vh-70px)] sm:h-[calc(100vh-80px)] bg-white dark:bg-[#0b1220] flex-col justify-start pt-6 sm:pt-8 lg:pt-0 lg:justify-center transition-all z-[999] overflow-y-auto ${
-          isMobileMenuOpen ? 'left-0' : '-left-full lg:left-0'
+        <div className={`nav-links flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8 lg:static lg:flex-row lg:w-auto lg:h-auto lg:bg-transparent lg:dark:bg-transparent fixed top-[70px] sm:top-20 left-0 w-full h-[calc(100vh-70px)] sm:h-[calc(100vh-80px)] bg-white dark:bg-[#0b1220] flex-col justify-start pt-6 sm:pt-8 lg:pt-0 lg:justify-center transition-all duration-300 ease-in-out z-[999] overflow-y-auto ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}>
           {navLinks.map((link, index) => (
             <a
@@ -123,6 +159,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 
