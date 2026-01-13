@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { FaExternalLinkAlt, FaArrowRight, FaChartLine, FaCheckCircle, FaCode, FaRocket } from 'react-icons/fa';
+import React, { useState, useEffect, useRef } from 'react';
+import { FaExternalLinkAlt, FaArrowRight, FaChartLine, FaCheckCircle, FaCode, FaRocket, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [visibleProjects, setVisibleProjects] = useState([]);
+  const scrollContainerRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   const projects = [
     {
@@ -165,8 +168,44 @@ const Projects = () => {
       (project) => activeFilter === 'all' || project.category === activeFilter
     );
     setVisibleProjects(filtered);
+    // Reset scroll position when filter changes
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft = 0;
+    }
+    checkScrollButtons();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeFilter]);
+
+  const checkScrollButtons = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  const scroll = (direction) => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = scrollContainerRef.current.clientWidth * 0.8;
+      scrollContainerRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      checkScrollButtons();
+      container.addEventListener('scroll', checkScrollButtons);
+      window.addEventListener('resize', checkScrollButtons);
+      return () => {
+        container.removeEventListener('scroll', checkScrollButtons);
+        window.removeEventListener('resize', checkScrollButtons);
+      };
+    }
+  }, [visibleProjects]);
 
   return (
     <section id="projects" className="section-padding bg-gradient-to-b from-white via-blue-50/20 to-white dark:from-[#0b1220] dark:via-[#0f172a] dark:to-[#0b1220]">
@@ -198,38 +237,74 @@ const Projects = () => {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {visibleProjects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-[#0f172a] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-blue-100 dark:border-blue-900/30 group"
-              data-aos="fade-up"
-              data-aos-delay={project.delay}
+        {/* Slider Container */}
+        <div className="relative">
+          {/* Navigation Buttons */}
+          {canScrollLeft && (
+            <button
+              onClick={() => scroll('left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-[#0f172a] rounded-full shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all border-2 border-primary/20 hover:border-primary hidden sm:flex"
+              aria-label="Scroll left"
             >
-              <div className="relative h-[220px] sm:h-[280px] lg:h-[250px] overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white text-2xl sm:text-3xl w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white hover:text-primary transform hover:scale-125 transition-all duration-300 shadow-xl"
-                  >
-                    <FaExternalLinkAlt />
-                  </a>
-                </div>
-                {project.progress && (
-                  <div className="absolute top-3 right-3 bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2 shadow-lg">
-                    <FaChartLine className="text-primary text-xs" />
-                    <span className="text-xs font-bold text-primary">{project.progress}%</span>
+              <FaChevronLeft className="text-lg" />
+            </button>
+          )}
+          {canScrollRight && (
+            <button
+              onClick={() => scroll('right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-[#0f172a] rounded-full shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all border-2 border-primary/20 hover:border-primary hidden sm:flex"
+              aria-label="Scroll right"
+            >
+              <FaChevronRight className="text-lg" />
+            </button>
+          )}
+
+          {/* Horizontal Scroll Container */}
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide pb-4 scroll-smooth"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
+          >
+            {visibleProjects.map((project, index) => (
+              <div
+                key={index}
+                className="bg-white dark:bg-[#0f172a] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-blue-100 dark:border-blue-900/30 group flex-shrink-0 w-[85vw] sm:w-[400px] md:w-[450px] lg:w-[500px]"
+                data-aos="fade-up"
+                data-aos-delay={project.delay}
+              >
+                <div className="relative h-[220px] sm:h-[280px] md:h-[300px] overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
+                    loading="lazy"
+                  />
+                  {/* 3+ Years Experience Badge - Blue Color */}
+                  <div className="absolute top-3 left-3 bg-primary text-white px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg shadow-lg flex items-center gap-1.5 sm:gap-2 z-10 border-2 border-white/20">
+                    <span className="text-xs sm:text-sm font-bold">3+</span>
+                    <span className="text-[10px] sm:text-xs font-medium whitespace-nowrap">Years Experience</span>
                   </div>
-                )}
-              </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white text-2xl sm:text-3xl w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white hover:text-primary transform hover:scale-125 transition-all duration-300 shadow-xl"
+                    >
+                      <FaExternalLinkAlt />
+                    </a>
+                  </div>
+                  {project.progress && (
+                    <div className="absolute top-3 right-3 bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2 shadow-lg">
+                      <FaChartLine className="text-primary text-xs" />
+                      <span className="text-xs font-bold text-primary">{project.progress}%</span>
+                    </div>
+                  )}
+                </div>
               <div className="p-5 sm:p-6">
                 <div className="flex flex-wrap gap-2 sm:gap-2.5 mb-3 sm:mb-4">
                   {project.tags.map((tag, tagIndex) => (
@@ -287,8 +362,17 @@ const Projects = () => {
                   <FaArrowRight className="transform group-hover/link:translate-x-2 transition-transform" />
                 </a>
               </div>
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Scroll Indicator for Mobile */}
+        <div className="flex justify-center gap-2 mt-4 sm:hidden">
+          <div className="text-xs text-accent dark:text-[#94a3b8] flex items-center gap-1">
+            <span>Swipe to explore</span>
+            <FaChevronRight className="text-xs animate-pulse" />
+          </div>
         </div>
         <div className="text-center mt-12 sm:mt-16" data-aos="fade-up">
           <div className="inline-flex items-center gap-3 bg-white dark:bg-[#0f172a] px-6 py-4 rounded-xl shadow-lg border-2 border-primary/20">
