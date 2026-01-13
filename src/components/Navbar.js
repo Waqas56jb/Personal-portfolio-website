@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaMoon, FaSun, FaHome, FaUser, FaCode, FaBriefcase, FaFolderOpen, FaCog, FaEnvelope } from 'react-icons/fa';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const Navbar = ({ isDark, toggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,13 +39,13 @@ const Navbar = ({ isDark, toggleTheme }) => {
   };
 
   const navLinks = [
-    { href: '#home', label: 'Home', icon: FaHome },
-    { href: '#about', label: 'About', icon: FaUser },
-    { href: '#skills', label: 'Skills', icon: FaCode },
-    { href: '#experience', label: 'Experience', icon: FaBriefcase },
-    { href: '#projects', label: 'Projects', icon: FaFolderOpen },
-    { href: '#services', label: 'Services', icon: FaCog },
-    { href: '#contact', label: 'Contact', icon: FaEnvelope },
+    { href: '#home', label: 'Home' },
+    { href: '#about', label: 'About' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#services', label: 'Services' },
+    { href: '#contact', label: 'Contact' },
   ];
 
   return (
@@ -66,27 +66,23 @@ const Navbar = ({ isDark, toggleTheme }) => {
         <div className={`nav-links flex items-center gap-4 sm:gap-6 lg:gap-8 lg:static lg:flex-row lg:w-auto lg:h-auto lg:bg-transparent lg:dark:bg-transparent fixed top-[70px] sm:top-20 left-0 w-full h-[calc(100vh-70px)] sm:h-[calc(100vh-80px)] bg-white dark:bg-[#0b1220] flex-col justify-start pt-8 lg:pt-0 lg:justify-center transition-all z-[999] overflow-y-auto ${
           isMobileMenuOpen ? 'left-0' : '-left-full lg:left-0'
         }`}>
-          {navLinks.map((link, index) => {
-            const IconComponent = link.icon;
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`nav-link font-medium text-sm sm:text-base lg:text-[0.95rem] relative text-secondary dark:text-[#e2e8f0] transition-colors inline-flex items-center gap-2 ${
-                  activeSection === link.href.substring(1) ? 'text-primary' : ''
-                }`}
-                data-aos="fade-down"
-                data-aos-delay={100 + index * 50}
-              >
-                <IconComponent className="text-base" />
-                {link.label}
-                <span className={`absolute bottom-[-5px] left-0 h-0.5 bg-primary transition-all ${
-                  activeSection === link.href.substring(1) ? 'w-full' : 'w-0'
-                }`} />
-              </a>
-            );
-          })}
+          {navLinks.map((link, index) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={`nav-link font-medium text-sm sm:text-base lg:text-[0.95rem] relative text-secondary dark:text-[#e2e8f0] transition-colors ${
+                activeSection === link.href.substring(1) ? 'text-primary' : ''
+              }`}
+              data-aos="fade-down"
+              data-aos-delay={100 + index * 50}
+            >
+              {link.label}
+              <span className={`absolute bottom-[-5px] left-0 h-0.5 bg-primary transition-all ${
+                activeSection === link.href.substring(1) ? 'w-full' : 'w-0'
+              }`} />
+            </a>
+          ))}
           <a
             href="/assets/Rana Waqas Naveed Data Science CV.pdf"
             download
