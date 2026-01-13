@@ -1,16 +1,19 @@
-# Waqas Naveed - Data Science & AI Portfolio (React + Tailwind)
+# Waqas Naveed - AI Engineer & Data Scientist Portfolio (React + Tailwind)
 
-A modern, responsive portfolio website built with React and Tailwind CSS, showcasing expertise in Data Science, Artificial Intelligence, and Machine Learning.
+A comprehensive, professional portfolio website built with React and Tailwind CSS, showcasing 100+ AI/ML projects, expertise in Data Science, Data Engineering, and Full-Stack Development.
 
 ## 🚀 Features
 
-- **React-based**: Modern component architecture
-- **Tailwind CSS**: Utility-first styling with dark mode support
-- **Fully Responsive**: Optimized for all devices (desktop, tablet, mobile)
+- **React-based**: Modern component architecture with React 18
+- **Tailwind CSS**: Utility-first styling with professional blue & white theme
+- **Fully Responsive**: Optimized for all devices (mobile, tablet, laptop, desktop)
 - **Animations**: Smooth scroll animations using AOS (Animate On Scroll)
 - **Particles Background**: Interactive particle effects
 - **Dark Mode**: Theme toggle with persistent preference
-- **All Original Content**: Every section, detail, and record preserved exactly as original
+- **React Icons**: Modern icon library integration
+- **Toast Notifications**: Success/failure messages using React Toastify
+- **11 Featured Projects**: Detailed project showcases with HD images
+- **Professional UI/UX**: Industry-standard design with enhanced user experience
 
 ## 📋 Prerequisites
 
@@ -41,22 +44,23 @@ A modern, responsive portfolio website built with React and Tailwind CSS, showca
 Personal-portfolio-website/
 ├── public/
 │   ├── index.html          # HTML template
-│   └── profile2.png        # Profile image (add your image here)
+│   ├── profile2.png        # Profile image
+│   └── assets/             # CV and other assets
 ├── src/
 │   ├── components/         # React components
-│   │   ├── About.js
-│   │   ├── BackToTop.js
+│   │   ├── About.js        # About section with tabs
+│   │   ├── BackToTop.js    # Back to top button
 │   │   ├── Certifications.js
-│   │   ├── Contact.js
-│   │   ├── Experience.js
-│   │   ├── Footer.js
-│   │   ├── Hero.js
-│   │   ├── Navbar.js
+│   │   ├── Contact.js      # Contact form with toastify
+│   │   ├── Experience.js   # Professional experience
+│   │   ├── Footer.js       # Footer with newsletter
+│   │   ├── Hero.js         # Hero section
+│   │   ├── Navbar.js       # Navigation with theme toggle
 │   │   ├── ParticlesBackground.js
 │   │   ├── Preloader.js
-│   │   ├── Projects.js
-│   │   ├── Services.js
-│   │   ├── Skills.js
+│   │   ├── Projects.js     # 11 featured projects
+│   │   ├── Services.js     # Services offered
+│   │   ├── Skills.js       # Technical skills
 │   │   └── Testimonials.js
 │   ├── App.js              # Main App component
 │   ├── index.js            # React entry point
@@ -66,29 +70,42 @@ Personal-portfolio-website/
 └── postcss.config.js       # PostCSS configuration
 ```
 
-## 🎨 Customization
+## 🎨 Key Highlights
 
-### Update Profile Image
-Place your profile image in the `public/` folder and name it `profile2.png`, or update the path in `src/components/About.js`.
+### Professional Experience
+- **General Manager & AI Engineer** at PropertyReply (UK-based) - 2023 to Present
+- **AI Engineer & Data Scientist** (Freelance) - 100+ projects delivered
+- **3+ Years** of professional experience
 
-### Update Content
-All content is preserved exactly as the original. To update:
-- Personal information: Edit `src/components/Hero.js`, `src/components/Contact.js`
-- Projects: Edit `src/components/Projects.js`
-- Skills: Edit `src/components/Skills.js`
-- Experience: Edit `src/components/Experience.js`
-- And so on for each section
+### Expertise Areas
+- **AI/ML**: Machine Learning, Deep Learning, Computer Vision, NLP
+- **Data Science**: Data Analysis, Statistical Modeling, Predictive Analytics
+- **Data Engineering**: ETL Pipelines, Data Warehousing, Big Data Processing
+- **Web Development**: React, Next.js, Tailwind CSS, Node.js
+- **Mobile Development**: Flutter, React Native, Expo
 
-### Styling
-All styles use Tailwind CSS classes. Custom colors and themes are defined in `tailwind.config.js`.
+### Featured Projects
+1. Franchise Statement Automation System
+2. Smart University Neighborhood Advisory System
+3. AI-Powered Multi-Platform Social Media Auto-Posting
+4. HIPAA-Compliant Healthcare Document Compliance Chatbot
+5. Human Activity Recognition from Video
+6. Skeleton-Based Human Activity Recognition (LSTM/ST-GCN)
+7. Emergency Towing Service Flutter Application
+8. Deep Learning-Based Skin Disease Classification
+9. YOLO-Based Autonomous Pilot Transfer Safety System
+10. AI Voice Call Agent with Twilio Integration
+11. EduPath - Smart Student Advisory Bot
+12. HealthGenix - Online Gym & Rehabilitation App
 
 ## 📦 Technologies Used
 
 - **React 18**: UI library
 - **Tailwind CSS 3**: Utility-first CSS framework
+- **React Icons**: Modern icon library
+- **React Toastify**: Toast notifications
 - **AOS**: Animate On Scroll library
 - **Particles.js**: Background particle effects
-- **Font Awesome**: Icons
 - **Google Fonts**: Poppins & Playfair Display
 
 ## 🌐 Deployment
@@ -102,30 +119,31 @@ All styles use Tailwind CSS classes. Custom colors and themes are defined in `ta
 1. Build the project: `npm run build`
 2. Deploy the `build` folder to Netlify
 
-### GitHub Pages
-1. Install gh-pages: `npm install --save-dev gh-pages`
-2. Add to package.json scripts:
-   ```json
-   "predeploy": "npm run build",
-   "deploy": "gh-pages -d build"
-   ```
-3. Deploy: `npm run deploy`
+## 📝 Important Notes
 
-## 📝 Notes
-
-- All original content, records, and details are preserved
-- Responsive design matches the original exactly
-- Dark mode functionality included
-- All animations and interactions maintained
-- CV download link preserved (ensure CV file is in `public/assets/` folder)
+- **Profile Image**: Place `profile2.png` in the `public/` folder
+- **CV File**: Place `Rana Waqas Naveed Data Science CV.pdf` in `public/assets/` folder
+- **All Content**: Updated with latest projects, experience, and achievements
+- **Responsive Design**: Fully optimized for all screen sizes
+- **Theme**: Professional blue and white color scheme
+- **100+ Projects**: Mentioned throughout the portfolio
 
 ## 📧 Contact
 
 - **Email**: waqas56jb@gmail.com
+- **Phone**: +92 477 603854
+- **Location**: Faisalabad, Pakistan (Available for Remote Work Worldwide)
 - **LinkedIn**: [Waqas Naveed](https://www.linkedin.com/in/waqas-naveed-630297247/)
 - **GitHub**: [Waqas56jb](https://github.com/Waqas56jb)
 - **Medium**: [@waqas56jb](https://medium.com/@waqas56jb)
 
+## 🏢 Current Role
+
+**General Manager & AI Engineer** at PropertyReply (UK-based)
+- Collaborating with Saqib Hussain
+- Leading AI initiatives and technical operations
+- Developing innovative solutions for property management
+
 ---
 
-*Built with React and Tailwind CSS - 2025*
+*Built with React, Tailwind CSS, and modern web technologies - 2025*

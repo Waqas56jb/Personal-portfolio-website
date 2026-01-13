@@ -11,12 +11,22 @@ module.exports = {
       'md': '768px',
       'lg': '992px',
       'xl': '1200px',
+      'max-sm': {'max': '575px'},
+      'max-md': {'max': '767px'},
+      'max-lg': {'max': '991px'},
+      'max-xl': {'max': '1199px'},
     },
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#2563eb',
-          dark: '#1d4ed8',
+          DEFAULT: '#1e3a8a',
+          dark: '#1e40af',
+          light: '#3b82f6',
+        },
+        navy: {
+          DEFAULT: '#1e3a8a',
+          dark: '#1e40af',
+          light: '#3b82f6',
         },
         secondary: '#1e293b',
         accent: '#64748b',

@@ -15,6 +15,8 @@ import BackToTop from './components/BackToTop';
 import ParticlesBackground from './components/ParticlesBackground';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -72,6 +74,18 @@ function App() {
       </main>
       <Footer />
       <BackToTop />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme={isDark ? 'dark' : 'light'}
+      />
     </div>
   );
 }
