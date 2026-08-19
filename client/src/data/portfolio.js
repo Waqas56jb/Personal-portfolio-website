@@ -9,7 +9,7 @@ export const profile = {
   location: 'Faisalabad, Pakistan',
   email: 'waqas56jb@gmail.com',
   phone: '+92 347 7603854',
-  cv: '/assets/Waqas_Naveed_Data_Engineer.pdf',
+  cv: '/Waqas_Naveed_Data_Engineer.pdf',
   github: 'https://github.com/Waqas56jb',
   linkedin: 'https://www.linkedin.com/in/waqas-naveed-630297247',
   site: 'https://personal-portfolio-website-opal-five.vercel.app/',

@@ -36,7 +36,15 @@ const mintClientSecret = async (instructions) => {
         model: env.openai.model,
         instructions,
         audio: {
-          input: { turn_detection: { type: 'semantic_vad' } },
+          input: {
+            transcription: { model: 'whisper-1' },
+            turn_detection: {
+              type: 'semantic_vad',
+              // The visitor can cut in; the agent stops instead of talking over.
+              interrupt_response: true,
+              create_response: true,
+            },
+          },
           output: { voice: env.openai.voice },
         },
       },
@@ -63,7 +71,15 @@ const mintClientSecret = async (instructions) => {
       voice: env.openai.voice,
       modalities: ['audio', 'text'],
       instructions,
-      turn_detection: { type: 'server_vad', silence_duration_ms: 550 },
+      input_audio_transcription: { model: 'whisper-1' },
+      turn_detection: {
+        type: 'server_vad',
+        threshold: 0.6,
+        prefix_padding_ms: 300,
+        silence_duration_ms: 620,
+        create_response: true,
+        interrupt_response: true,
+      },
     }),
   });
 

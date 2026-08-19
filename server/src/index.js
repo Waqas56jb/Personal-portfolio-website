@@ -20,7 +20,7 @@ app.use(
     origin(origin, callback) {
       // Same-origin requests and curl send no Origin header.
       if (!origin) return callback(null, true);
-      if (env.clientOrigins.includes(origin)) return callback(null, true);
+      if (env.isOriginAllowed(origin)) return callback(null, true);
       return callback(new Error(`Origin ${origin} is not allowed by CORS.`));
     },
     methods: ['GET', 'POST'],

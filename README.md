@@ -62,6 +62,45 @@ The agent's behaviour lives in `server/src/prompts/agent.js`. It is scoped hard:
 it presents Waqas as a Data Engineer first, covers AI/ML, full-stack and prompt
 engineering when asked, and refuses anything unrelated to him.
 
+## Deployment (Vercel)
+
+| | URL |
+|---|---|
+| Frontend | https://waqas-naveed.vercel.app |
+| Backend | https://waqas-backend.vercel.app |
+
+`client/.env.production` already points the build at the deployed backend, so
+`npm run build` and Vercel both wire the frontend to the live API.
+
+**The backend's environment variables live in the Vercel dashboard**, not in a
+file — `server/.env` is git-ignored and never reaches the deploy. Set these under
+*waqas-backend → Settings → Environment Variables*, then redeploy:
+
+```
+NODE_ENV            production
+CLIENT_ORIGIN       https://waqas-naveed.vercel.app,https://*.vercel.app,http://localhost:3000
+MAIL_USER           waqas56jb@gmail.com
+MAIL_APP_PASSWORD   <google app password>
+MAIL_TO             waqas56jb@gmail.com
+SEND_AUTO_REPLY     true
+OPENAI_API_KEY      <openai key with realtime access>
+OPENAI_REALTIME_MODEL   gpt-realtime
+OPENAI_REALTIME_VOICE   alloy
+```
+
+`CLIENT_ORIGIN` accepts wildcards, so `https://*.vercel.app` also lets every
+preview deployment through without listing each one.
+
+Check it landed:
+
+```bash
+curl https://waqas-backend.vercel.app/api/health
+curl -i -X POST https://waqas-backend.vercel.app/api/contact   -H "Origin: https://waqas-naveed.vercel.app"   -H "Content-Type: application/json"   -d '{"name":"Test","email":"you@example.com","message":"hello from prod"}'
+```
+
+A `403 ... not allowed by CORS` means `CLIENT_ORIGIN` is still missing the
+frontend origin.
+
 ## Security
 
 - `.env` files are git-ignored. Never commit them.

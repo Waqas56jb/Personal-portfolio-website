@@ -14,7 +14,6 @@ import Process from './components/Process';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import BackToTop from './components/BackToTop';
 import VoiceAgent from './components/VoiceAgent';
 
 const App = () => {
@@ -77,7 +76,6 @@ const App = () => {
         <Contact />
       </main>
       <Footer />
-      <BackToTop />
       <VoiceAgent />
     </>
   );

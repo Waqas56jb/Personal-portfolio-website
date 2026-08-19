@@ -36,6 +36,20 @@ const env = {
   },
 };
 
+/**
+ * Entries may be exact origins or contain `*` — e.g. `https://*.vercel.app`,
+ * which lets Vercel preview deployments through without listing each one.
+ */
+env.isOriginAllowed = (origin) =>
+  env.clientOrigins.some((allowed) => {
+    if (!allowed.includes('*')) return allowed === origin;
+    const pattern = allowed
+      .split('*')
+      .map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+      .join('[^/]*');
+    return new RegExp(`^${pattern}$`).test(origin);
+  });
+
 env.mailReady = Boolean(env.mail.user && env.mail.pass);
 env.voiceReady = Boolean(env.openai.apiKey);
 
