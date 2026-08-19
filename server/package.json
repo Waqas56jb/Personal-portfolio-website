@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend for Waqas Naveed's portfolio — contact mail delivery and OpenAI Realtime voice agent sessions.",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "nodemailer": "^6.9.14"
+  }
+}
