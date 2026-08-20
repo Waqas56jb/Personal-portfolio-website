@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaGithub, FaArrowRight, FaEnvelope, FaAward, FaBolt, FaCloud } from 'react-icons/fa';
+import { FaGithub, FaArrowRight, FaEnvelope } from 'react-icons/fa';
 import { profile, marqueeTech } from '../data/portfolio';
 import Reveal from './ui/Reveal';
 
@@ -12,29 +12,6 @@ const useRotator = (items, interval = 2600) => {
   return items[i];
 };
 
-const FLOATING = [
-  {
-    icon: FaAward,
-    value: '3+ Years',
-    label: 'Experience',
-    className: '-left-3 top-[12%] sm:-left-2',
-    delay: '0s',
-  },
-  {
-    icon: FaBolt,
-    value: '1,000+',
-    label: 'Records / sec',
-    className: '-right-3 top-[40%]',
-    delay: '1.4s',
-  },
-  {
-    icon: FaCloud,
-    value: 'AWS + Azure',
-    label: 'Multi-cloud',
-    className: '-left-4 bottom-[10%]',
-    delay: '2.6s',
-  },
-];
 
 const Hero = () => {
   const rotating = useRotator(profile.rotating);
@@ -169,38 +146,6 @@ const Hero = () => {
                 aria-hidden="true"
               />
 
-              {/* floating stat cards */}
-              {FLOATING.map((f) => {
-                const Icon = f.icon;
-                return (
-                  <div
-                    key={f.value}
-                    className={`absolute ${f.className} animate-float`}
-                    style={{ animationDelay: f.delay }}
-                  >
-                    <div
-                      className="flex items-center gap-2 rounded-xl px-2.5 py-2 backdrop-blur-md sm:gap-2.5 sm:px-3 sm:py-2.5"
-                      style={{
-                        background: 'rgb(var(--surface) / 0.86)',
-                        border: '1px solid rgb(var(--line-strong))',
-                        boxShadow: '0 18px 44px -24px rgba(4,7,14,0.8)',
-                      }}
-                    >
-                      <span
-                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg sm:h-8 sm:w-8"
-                        style={{ background: 'rgba(59,130,246,0.14)', color: '#3B82F6' }}
-                        aria-hidden="true"
-                      >
-                        <Icon className="text-[12px]" />
-                      </span>
-                      <span className="leading-tight">
-                        <span className="block font-display text-[12px] font-semibold sm:text-[13px]">{f.value}</span>
-                        <span className="kbd block text-[8.5px] leading-tight">{f.label}</span>
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
             </div>
           </Reveal>
         </div>
