@@ -225,7 +225,7 @@ const VoiceAgent = () => {
         className={`group fixed bottom-5 right-5 z-[70] transition-all duration-500 ${
           open ? 'pointer-events-none scale-50 opacity-0' : 'scale-100 opacity-100'
         }`}
-        style={{ bottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
+        style={{ bottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))' }}
       >
         <span
           className="absolute inset-0 -z-10 rounded-full"
