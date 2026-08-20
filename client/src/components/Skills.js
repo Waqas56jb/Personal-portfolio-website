@@ -15,14 +15,15 @@ const Skills = () => {
           eyebrow="Technology Ecosystem"
           title="The stack I build"
           accent="platforms with."
-          description="Hover any technology to see what it does in the systems I design."
+          description="Every technology below carries a one-line note on what it does in the systems I build."
         />
 
         <div className="mt-10 grid gap-4 lg:grid-cols-[240px_1fr] lg:items-start lg:gap-6">
           {/* Category rail ------------------------------------------- */}
           <Reveal>
+            <div className="scroll-edge lg:sticky lg:top-24">
             <div
-              className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 lg:sticky lg:top-24 lg:flex-col lg:overflow-visible lg:pb-0"
+              className="scroll-x flex gap-2 scrollbar-hide pb-1 lg:flex-col lg:overflow-visible lg:pb-0"
               role="tablist"
               aria-label="Skill categories"
             >
@@ -52,6 +53,7 @@ const Skills = () => {
                 );
               })}
             </div>
+            </div>
           </Reveal>
 
           {/* Tiles ---------------------------------------------------- */}
@@ -60,12 +62,12 @@ const Skills = () => {
             role="tabpanel"
             aria-label={`${active.title} technologies`}
           >
-            <div className="mb-4 flex items-baseline justify-between gap-3">
+            <div className="mb-4 flex flex-col items-start gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
               <h3 className="text-[1.05rem]">{active.title}</h3>
               <span className="kbd">{active.items.length} technologies</span>
             </div>
 
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-2.5 xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
               {active.items.map((item, i) => (
                 <div
                   key={item.name}
@@ -88,11 +90,11 @@ const Skills = () => {
                       style={{ background: '#3B82F6' }}
                       aria-hidden="true"
                     />
-                    <span className="text-[12.5px] font-medium leading-tight transition-colors group-hover:text-azure-500">
+                    <span className="text-[13.5px] font-medium leading-tight transition-colors group-hover:text-azure-500 sm:text-[12.5px]">
                       {item.name}
                     </span>
                   </div>
-                  <p className="muted mt-1.5 font-mono text-[9.5px] leading-snug opacity-70 transition-opacity duration-300 group-hover:opacity-100">
+                  <p className="muted mt-1.5 font-mono text-[11px] leading-relaxed opacity-80 transition-opacity duration-300 group-hover:opacity-100 sm:text-[9.5px] sm:leading-snug sm:opacity-70">
                     {item.note}
                   </p>
                 </div>

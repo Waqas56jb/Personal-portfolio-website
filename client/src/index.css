@@ -37,9 +37,14 @@
 
   html {
     scroll-behavior: smooth;
-    overflow-x: clip;
+    overflow-x: hidden; /* fallback: iOS Safari < 16 has no `clip` */
     -webkit-text-size-adjust: 100%;
-    scroll-padding-top: 88px;
+    scroll-padding-top: 84px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @supports (overflow: clip) {
+    html { overflow-x: clip; }
   }
 
   body {
@@ -47,13 +52,23 @@
     margin: 0;
     background: rgb(var(--bg));
     color: rgb(var(--text));
-    overflow-x: clip;
+    overflow-x: hidden;
     transition: background-color 0.35s ease, color 0.35s ease;
   }
 
   #root {
-    overflow-x: clip;
+    overflow-x: hidden;
   }
+
+  @supports (overflow: clip) {
+    body, #root { overflow-x: clip; }
+  }
+
+  /* Kill the 300ms tap delay and stop iOS zooming when a field is focused. */
+  button, a, [role='button'], input, select, textarea {
+    touch-action: manipulation;
+  }
+
 
   h1, h2, h3, h4 {
     @apply font-display font-semibold tracking-tightest;
@@ -126,10 +141,16 @@
     transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
   }
 
-  .card:hover {
+  @media (hover: hover) {
+    .card:hover {
+      border-color: rgba(59, 130, 246, 0.45);
+      transform: translateY(-3px);
+      box-shadow: 0 22px 60px -34px rgba(59, 130, 246, 0.5);
+    }
+  }
+
+  .card:active {
     border-color: rgba(59, 130, 246, 0.45);
-    transform: translateY(-3px);
-    box-shadow: 0 22px 60px -34px rgba(59, 130, 246, 0.5);
   }
 
   /* Mouse-follow spotlight, kept very subtle --------------------------- */
@@ -147,7 +168,9 @@
     pointer-events: none;
   }
 
-  .spotlight:hover::after { opacity: 1; }
+  @media (hover: hover) {
+    .spotlight:hover::after { opacity: 1; }
+  }
 
   /* Type ---------------------------------------------------------------- */
   .accent-text {
@@ -185,9 +208,11 @@
     transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
   }
 
-  .chip:hover {
-    color: rgb(var(--accent));
-    border-color: rgba(59, 130, 246, 0.5);
+  @media (hover: hover) {
+    .chip:hover {
+      color: rgb(var(--accent));
+      border-color: rgba(59, 130, 246, 0.5);
+    }
   }
 
   /* Buttons -------------------------------------------------------------- */
@@ -205,9 +230,11 @@
     box-shadow: 0 14px 34px -18px rgba(37, 99, 235, 0.9);
   }
 
-  .btn-primary:hover {
-    background: linear-gradient(100deg, #3B82F6, #2563EB);
-    box-shadow: 0 20px 46px -20px rgba(37, 99, 235, 1);
+  @media (hover: hover) {
+    .btn-primary:hover {
+      background: linear-gradient(100deg, #3B82F6, #2563EB);
+      box-shadow: 0 20px 46px -20px rgba(37, 99, 235, 1);
+    }
   }
 
   .btn-ghost {
@@ -217,9 +244,11 @@
     color: rgb(var(--text));
   }
 
-  .btn-ghost:hover {
-    border-color: rgba(59, 130, 246, 0.6);
-    color: rgb(var(--accent));
+  @media (hover: hover) {
+    .btn-ghost:hover {
+      border-color: rgba(59, 130, 246, 0.6);
+      color: rgb(var(--accent));
+    }
   }
 
   /* Backdrops ------------------------------------------------------------ */
@@ -243,6 +272,32 @@
     border-radius: 9999px;
     filter: blur(120px);
     pointer-events: none;
+  }
+
+  .scroll-x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .scroll-edge {
+    position: relative;
+  }
+
+  .scroll-edge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 46px;
+    pointer-events: none;
+    background: linear-gradient(to right, transparent, rgb(var(--surface)));
+    border-radius: 0 12px 12px 0;
+  }
+
+  @media (min-width: 992px) {
+    .scroll-edge::after { display: none; }
   }
 
   .marquee-mask {
@@ -387,5 +442,67 @@
     border-color: rgba(125, 179, 251, 0.55);
     color: #FFFFFF;
     box-shadow: 0 18px 44px -16px rgba(37, 99, 235, 0.95);
+  }
+}
+
+
+/* ---------------------------------------------------------------------------
+   Mobile pass. Phone screens get a larger minimum type size, roomier taps and
+   tighter section rhythm. `body .x` beats Tailwind's single-class specificity,
+   so per-element `text-[9px]` utilities are lifted rather than fought.
+--------------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  body .kbd {
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+  }
+
+  body .chip {
+    font-size: 11.5px;
+    padding: 0.34rem 0.6rem;
+  }
+
+  body .eyebrow {
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+  }
+
+  body .btn {
+    padding: 0.8rem 1.15rem;
+    font-size: 14px;
+  }
+
+  .container-x {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  .section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  /* iOS zooms the whole page when a focused field is under 16px. */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* A hard floor on micro-labels. Several components set 8–10px arbitrary
+     sizes that read fine on a desktop monitor and not at all on a phone. */
+  body .text-\[8px\],
+  body .text-\[8\.5px\],
+  body .text-\[9px\],
+  body .text-\[9\.5px\],
+  body .text-\[10px\] {
+    font-size: 10.5px;
+  }
+
+  /* Comfortable touch targets. */
+  a[aria-label],
+  button[aria-label] {
+    min-width: 42px;
+    min-height: 42px;
   }
 }

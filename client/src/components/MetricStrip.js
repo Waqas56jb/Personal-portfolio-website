@@ -15,8 +15,8 @@ const MetricStrip = () => (
               <div className="font-display text-[1.6rem] font-semibold leading-none sm:text-[2rem]">
                 <Counter value={m.value} suffix={m.suffix} className="accent-text" />
               </div>
-              <div className="mt-2 text-[13px] font-medium">{m.label}</div>
-              <div className="kbd mt-1 text-[9.5px]">{m.note}</div>
+              <div className="mt-2 text-[13.5px] font-medium sm:text-[13px]">{m.label}</div>
+              <div className="kbd mt-1 text-[10.5px] sm:text-[9.5px]">{m.note}</div>
             </div>
           </Reveal>
         ))}
@@ -30,7 +30,7 @@ const MetricStrip = () => (
               <FaGlobeAmericas className="text-azure-500" aria-hidden="true" />
               <h2 className="text-base sm:text-[1.05rem]">Trusted by clients across global markets</h2>
             </div>
-            <p className="muted mt-2 max-w-[62ch] text-[13.5px] leading-relaxed">
+            <p className="muted mt-2 max-w-[62ch] text-[13.5px] leading-relaxed sm:text-[13.5px]">
               3+ years delivering production-grade software and engineering solutions for clients
               across international markets.
             </p>

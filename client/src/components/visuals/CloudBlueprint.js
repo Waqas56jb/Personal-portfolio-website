@@ -118,7 +118,8 @@ const CloudBlueprint = ({ spec }) => {
   const nodes = spec.nodes;
 
   return (
-    <div className="overflow-x-auto scrollbar-hide">
+    <div className="scroll-edge">
+      <div className="scroll-x scrollbar-hide">
       <svg
         viewBox={`0 0 ${VW} ${VH}`}
         className="w-full min-w-[900px]"
@@ -306,6 +307,7 @@ const CloudBlueprint = ({ spec }) => {
           {spec.caption}
         </text>
       </svg>
+    </div>
     </div>
   );
 };

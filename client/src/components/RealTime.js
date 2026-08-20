@@ -127,14 +127,14 @@ const RealTime = () => {
               ].map((s) => (
                 <div key={s.l} className="px-4 py-4" style={{ background: 'rgb(var(--surface))' }}>
                   <div className="font-display text-[1.05rem] font-semibold accent-text">{s.v}</div>
-                  <div className="kbd mt-1 text-[9.5px]">{s.l}</div>
+                  <div className="kbd mt-1 text-[10.5px] sm:text-[9.5px]">{s.l}</div>
                 </div>
               ))}
             </div>
           </div>
         </Reveal>
 
-        <p className="kbd mt-3 text-[9.5px]">
+        <p className="kbd mt-3 text-[10.5px] leading-relaxed sm:text-[9.5px]">
           Demonstration only — this chart visualises pipeline behaviour and does not represent live production traffic.
         </p>
       </div>

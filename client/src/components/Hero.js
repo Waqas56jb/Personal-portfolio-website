@@ -17,21 +17,21 @@ const FLOATING = [
     icon: FaAward,
     value: '3+ Years',
     label: 'Experience',
-    className: 'left-0 top-[14%] sm:-left-2',
+    className: '-left-3 top-[12%] sm:-left-2',
     delay: '0s',
   },
   {
     icon: FaBolt,
     value: '1,000+',
     label: 'Records / sec',
-    className: 'right-0 top-[40%] sm:-right-3',
+    className: '-right-3 top-[40%]',
     delay: '1.4s',
   },
   {
     icon: FaCloud,
     value: 'AWS + Azure',
     label: 'Multi-cloud',
-    className: 'left-0 bottom-[12%] sm:-left-4',
+    className: '-left-4 bottom-[10%]',
     delay: '2.6s',
   },
 ];
@@ -48,7 +48,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative overflow-hidden pb-14 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36"
+      className="relative overflow-hidden pb-14 pt-24 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36"
     >
       <div className="grid-bg pointer-events-none absolute inset-0" aria-hidden="true" />
       <div
@@ -63,12 +63,12 @@ const Hero = () => {
       />
 
       <div className="container-x relative">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
           {/* Copy ------------------------------------------------------ */}
-          <div className="order-2 lg:order-1">
+          <div>
             <Reveal>
               <span
-                className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em]"
+                className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.18em] sm:text-[10px] sm:tracking-[0.2em]"
                 style={{ border: '1px solid rgb(var(--line-strong))', color: 'rgb(var(--text-dim))' }}
               >
                 <span className="live-dot" aria-hidden="true" />
@@ -124,8 +124,8 @@ const Hero = () => {
           </div>
 
           {/* Portrait -------------------------------------------------- */}
-          <Reveal delay={160} className="order-1 lg:order-2">
-            <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[440px]">
+          <Reveal delay={160}>
+            <div className="relative mx-auto mt-2 w-full max-w-[236px] xs:max-w-[268px] sm:max-w-[330px] lg:mt-0 lg:max-w-[440px]">
               {/* halo */}
               <div
                 className="absolute left-1/2 top-1/2 -z-10 h-[86%] w-[86%] -translate-x-1/2 -translate-y-1/2 rounded-full"
@@ -179,7 +179,7 @@ const Hero = () => {
                     style={{ animationDelay: f.delay }}
                   >
                     <div
-                      className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 backdrop-blur-md"
+                      className="flex items-center gap-2 rounded-xl px-2.5 py-2 backdrop-blur-md sm:gap-2.5 sm:px-3 sm:py-2.5"
                       style={{
                         background: 'rgb(var(--surface) / 0.86)',
                         border: '1px solid rgb(var(--line-strong))',
@@ -187,15 +187,15 @@ const Hero = () => {
                       }}
                     >
                       <span
-                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
+                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg sm:h-8 sm:w-8"
                         style={{ background: 'rgba(59,130,246,0.14)', color: '#3B82F6' }}
                         aria-hidden="true"
                       >
                         <Icon className="text-[12px]" />
                       </span>
                       <span className="leading-tight">
-                        <span className="block font-display text-[13px] font-semibold">{f.value}</span>
-                        <span className="kbd block text-[8.5px]">{f.label}</span>
+                        <span className="block font-display text-[12px] font-semibold sm:text-[13px]">{f.value}</span>
+                        <span className="kbd block text-[8.5px] leading-tight">{f.label}</span>
                       </span>
                     </div>
                   </div>

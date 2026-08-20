@@ -45,17 +45,17 @@ const ProjectCard = ({ project, onOpen }) => {
         <h3 className="text-[1.05rem] leading-snug transition-colors group-hover:text-azure-500">
           {project.title}
         </h3>
-        <p className="muted mt-2 text-[13px] leading-relaxed">{project.kicker}</p>
+        <p className="muted mt-2 text-[13.5px] leading-relaxed sm:text-[13px]">{project.kicker}</p>
 
         {/* Metrics */}
         <div className="mt-4 grid grid-cols-3 gap-2">
           {project.metrics.map((m) => (
             <div key={m.label} className="panel-2 px-2.5 py-2">
-              <div className="font-display text-[13px] font-semibold leading-none">
+              <div className="font-display text-[14px] font-semibold leading-none sm:text-[13px]">
                 {m.value}
                 {m.unit && <span className="muted ml-0.5 font-mono text-[9px]">{m.unit}</span>}
               </div>
-              <div className="kbd mt-1 text-[8.5px]">{m.label}</div>
+              <div className="kbd mt-1 text-[10px] sm:text-[8.5px]">{m.label}</div>
             </div>
           ))}
         </div>

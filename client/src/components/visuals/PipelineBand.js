@@ -23,7 +23,8 @@ const CY = 96;
  * so the automation reads as movement rather than a static diagram.
  */
 const PipelineBand = () => (
-  <div className="overflow-x-auto scrollbar-hide">
+  <div className="scroll-edge">
+    <div className="scroll-x scrollbar-hide">
     <svg
       viewBox={`0 0 ${W} ${H}`}
       className="min-w-[880px] w-full"
@@ -173,6 +174,7 @@ const PipelineBand = () => (
         );
       })}
     </svg>
+    </div>
   </div>
 );
 

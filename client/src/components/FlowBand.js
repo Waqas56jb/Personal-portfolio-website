@@ -22,6 +22,7 @@ const FlowBand = () => (
 
           <div className="px-2 py-4 sm:px-5 sm:py-6">
             <PipelineBand />
+            <p className="kbd mt-2 px-2 text-[10px] lg:hidden">Swipe the pipeline to follow the flow.</p>
           </div>
         </div>
       </Reveal>

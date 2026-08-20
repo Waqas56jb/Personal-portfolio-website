@@ -98,7 +98,7 @@ const About = () => (
                 return (
                   <span
                     key={t.name}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-[7px] px-2 py-1 font-mono text-[10px] transition-colors hover:text-azure-500"
+                    className="absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-[7px] px-2 py-1 font-mono text-[10.5px] transition-colors hover:text-azure-500 sm:text-[10px]"
                     style={{
                       left: `${x}%`,
                       top: `${y}%`,
@@ -112,7 +112,7 @@ const About = () => (
               })}
             </div>
 
-            <p className="muted mt-6 text-center text-[12.5px] leading-relaxed">
+            <p className="muted mt-6 text-center text-[13px] leading-relaxed sm:text-[12.5px]">
               Every platform I build starts from the same core and adapts its edges to the workload.
             </p>
           </div>

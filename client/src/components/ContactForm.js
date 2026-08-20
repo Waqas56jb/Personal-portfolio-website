@@ -99,7 +99,7 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={submit} className="card h-full p-5 sm:p-6" noValidate>
-      <div className="mb-4 flex items-baseline justify-between gap-3">
+      <div className="mb-4 flex flex-col items-start gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
         <h3 className="text-[1.05rem]">Send a message</h3>
         <span className="kbd text-[9px]">replies within 1 business day</span>
       </div>

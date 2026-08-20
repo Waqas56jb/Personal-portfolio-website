@@ -127,7 +127,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub profile"
-              className="hidden h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-azure-500 sm:flex"
+              className="hidden h-10 w-10 items-center justify-center rounded-lg transition-colors hover:text-azure-500 sm:flex lg:h-9 lg:w-9"
               style={{ border: '1px solid rgb(var(--line))' }}
             >
               <FaGithub />
@@ -137,7 +137,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="hidden h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-azure-500 sm:flex"
+              className="hidden h-10 w-10 items-center justify-center rounded-lg transition-colors hover:text-azure-500 sm:flex lg:h-9 lg:w-9"
               style={{ border: '1px solid rgb(var(--line))' }}
             >
               <FaLinkedinIn />
@@ -146,7 +146,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
               type="button"
               onClick={toggleTheme}
               aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-              className="flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-azure-500"
+              className="flex h-10 w-10 items-center justify-center rounded-lg transition-colors hover:text-azure-500 lg:h-9 lg:w-9"
               style={{ border: '1px solid rgb(var(--line))' }}
             >
               {isDark ? <FaSun /> : <FaMoon />}
@@ -164,7 +164,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? 'Close menu' : 'Open menu'}
               aria-expanded={open}
-              className="flex h-9 w-9 items-center justify-center rounded-lg xl:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-lg xl:hidden"
               style={{ border: '1px solid rgb(var(--line))' }}
             >
               {open ? <FaTimes /> : <FaBars />}
@@ -217,7 +217,7 @@ const Navbar = ({ isDark, toggleTheme }) => {
                 <a
                   href={l.href}
                   onClick={(e) => go(e, l.href)}
-                  className="flex items-center gap-3 rounded-lg px-3 py-3 text-[15px] font-medium transition-colors hover:text-azure-500"
+                  className="flex items-center gap-3 rounded-lg px-3 py-3.5 text-[15.5px] font-medium transition-colors hover:text-azure-500"
                   style={{ color: active === l.href.slice(1) ? 'rgb(var(--accent))' : undefined }}
                 >
                   <span className="kbd text-[10px]">{String(i + 1).padStart(2, '0')}</span>

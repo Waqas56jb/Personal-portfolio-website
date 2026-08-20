@@ -34,7 +34,7 @@ const Architecture = () => {
           eyebrow="Architecture"
           title="Designed for real-time workloads,"
           accent="distributed processing and cloud scale."
-          description="This is the shape most of my platforms take. Hover any stage to see what it does and which managed services back it on each cloud."
+          description="This is the shape most of my platforms take. Pick any stage to see what it does and which managed services back it on each cloud."
         />
 
         {/* Stage rail ------------------------------------------------- */}
@@ -84,7 +84,7 @@ const Architecture = () => {
 
             <div className="p-3 sm:p-5">
               <CloudBlueprint spec={spec} />
-              <p className="kbd mt-2 text-[9px] sm:hidden">Swipe the diagram horizontally to explore.</p>
+              <p className="kbd mt-2 text-[10px] lg:hidden">Swipe the diagram horizontally to explore.</p>
             </div>
           </div>
         </Reveal>
